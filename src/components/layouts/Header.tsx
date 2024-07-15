@@ -47,7 +47,12 @@ export function Header({ data }: HeaderPropsI) {
             <Img src={logo.url} alt={logo.alt} className="w-128" />
           </Link>
 
-          <Button type="Primary_Blue" onClick={() => {}} label="Book Now" className="lg:hidden" />
+          <Button
+            type="Primary_Blue"
+            label={links[links.length - 1].label}
+            href={links[links.length - 1].url}
+            className="lg:hidden"
+          />
 
           <button
             type="button"
