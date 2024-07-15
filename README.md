@@ -26,6 +26,3 @@ Grooming website
 ![contact-us](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/contact-us.jpg 'contact-us')
 ![book-now](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/book-now.jpg 'book-now')
 ![404](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/404.jpg '404')
-
-https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/general/ogImage.jpg
-https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/general/ogImage.jpg
