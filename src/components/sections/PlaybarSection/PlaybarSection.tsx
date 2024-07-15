@@ -18,51 +18,51 @@ export function PlaybarSection() {
   // const DATA_0: DATAI = {
   //   img: [
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_1.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_1.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_2.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_2.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_3.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_3.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_4.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_4.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_5.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_5.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_6.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_6.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_7.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_7.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_8.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_8.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_9.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_9.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_10.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_10.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_11.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_11.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     },
   //     {
-  //       url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/playbar/playbar_12.jpg',
+  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_12.jpg',
   //       alt: 'Vladis Mobile Grooming & Spa'
   //     }
   //   ]

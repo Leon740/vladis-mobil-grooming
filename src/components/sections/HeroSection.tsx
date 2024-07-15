@@ -24,7 +24,7 @@ export function HeroSection() {
   //   buttonLabel: '215-987-7259',
   //   buttonUrl: 'tel:2159877259',
   //   img: {
-  //     url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/hero/hero_img.svg',
+  //     url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/hero/hero_img.png',
   //     alt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY'
   //   }
   // };

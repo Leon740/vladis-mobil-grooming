@@ -45,7 +45,7 @@ export function ReviewsSection() {
   //   reviews: [
   //     {
   //       yelp: true,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_1.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_1.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: "Her haircut is always so so cute and lasts a long time! Can't beat it.",
   //       paragraph:
@@ -54,7 +54,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: false,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_2.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_2.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title:
   //         "Amazing! I've had other dog groomers before, but they never left my dog feeling CLEAN.",
@@ -64,7 +64,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: false,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_3.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_3.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: 'She came out looking and feeling good.',
   //       paragraph:
@@ -73,7 +73,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: false,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_4.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_4.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: 'I can finally see his smile',
   //       paragraph:
@@ -82,7 +82,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: false,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_5.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_5.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: 'He always comes back looking great!',
   //       paragraph:
@@ -91,7 +91,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: true,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_6.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_6.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: 'I love what my dog looks like!!!',
   //       paragraph:
@@ -100,7 +100,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: true,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_7.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_7.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: 'His cut is so cute!',
   //       paragraph:
@@ -109,7 +109,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: false,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_8.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_8.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title: 'Great work and highly recommended!',
   //       paragraph:
@@ -118,7 +118,7 @@ export function ReviewsSection() {
   //     },
   //     {
   //       yelp: false,
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/reviews/reviews_9.jpg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/reviews/reviews_9.jpg',
   //       imgAlt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY',
   //       title:
   //         'I would definitely recommend anyone who needs a groomer at the convenience of staying at home.',

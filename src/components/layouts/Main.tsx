@@ -51,9 +51,9 @@ export function Main({ children }: MainPropsI) {
   // description: "Experience the best in mobile dog grooming. Our expert groomers bring stress-free, personalized care to your doorstep, ensuring your pup's happiness and well-being. Book your appointment today!";
   // keywords: "Dog grooming in Pennsylvania, Dog grooming in PA, Dog grooming in New Jersey, Dog grooming in NJ, Dog grooming in Delaware, Dog grooming in DE, Dog grooming in New York, Dog grooming in NY, Mobile dog grooming PA, Mobile dog grooming NJ, Mobile dog grooming DE, Mobile dog grooming NY, Professional dog grooming, Affordable dog grooming, Best dog groomer near me, Dog grooming services, Dog grooming packages, Pet grooming services, Dog spa services, Dog nail trimming, Dog bathing services, Dog fur trimming, Dog ear cleaning, Dog teeth cleaning, Dog grooming for small breeds, Dog grooming for large breeds, Poodle grooming services, Labrador grooming services, Shih Tzu grooming services, Golden Retriever grooming services, German Shepherd grooming services, Mobile dog grooming, Home dog grooming, Dog grooming for anxious dogs, Dog grooming for puppies, Senior dog grooming services, Organic dog grooming products, Eco-friendly dog grooming, Top-rated dog groomer, Experienced dog groomer, Local dog grooming, Dog grooming reviews, Dog grooming appointments, Dog grooming deals, Dog grooming promotions, Professional dog grooming in PA, Affordable dog grooming in NJ, Mobile dog grooming in DE, Best dog groomer in NY, Dog grooming services PA NJ DE NY, Dog spa services in Pennsylvania, Dog nail trimming in New Jersey, Pet grooming services in Delaware, Dog bathing in New York";
   // url: 'vladis-grooming.com';
-  // ogImageUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/general/ogImage.jpg';
+  // ogImageUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/general/ogImage.jpg';
   //   logo: {
-  //     url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/general/logo.svg',
+  //     url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/general/logo.svg',
   //     alt: 'Vladis Mobil Grooming & Spa in PA, NJ, DE, NY'
   //   },
   //   links: [
@@ -83,30 +83,30 @@ export function Main({ children }: MainPropsI) {
   // }
   //   ],
   //   img: {
-  //     url: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/general/footer.svg',
+  //     url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/general/footer.png',
   //     alt: 'Vladis Mobil Grooming & Spa in PA, NJ, DE, NY'
   //   },
   //   contacts: [
   //     {
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/contacts/contacts_phone.svg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_phone.svg',
   //       imgAlt: 'Vladis Mobil Grooming & Spa Phone',
   //       url: 'tel:2159877259',
   //       label: '215-987-7259'
   //     },
   //     {
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/contacts/contacts_email.svg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_email.svg',
   //       imgAlt: 'Vladis Mobil Grooming & Spa Email',
   //       url: 'mailto:vladis.mobile.grooming.spa@gmail.com',
   //       label: 'vladis.mobile.grooming.spa@gmail.com'
   //     },
   //     {
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/contacts/contacts_instagram.svg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_instagram.svg',
   //       imgAlt: 'Vladis Mobil Grooming & Spa Instagram',
   //       url: 'instagram.com',
   //       label: 'vladis.mobile.grooming.spa'
   //     },
   //     {
-  //       imgUrl: 'https://github.com/Leon740/vladis-mobil-grooming-frontend/src/assets/images/contacts/contacts_facebook.svg',
+  //       imgUrl: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_facebook.svg',
   //       imgAlt: 'Vladis Mobil Grooming & Spa Facebook',
   //       url: 'facebook.com',
   //       label: 'vladis.mobile.grooming.spa'
