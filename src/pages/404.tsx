@@ -1,49 +1,53 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import React from 'react';
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
+import { Main } from 'components/layouts/Main';
+import { Button } from 'components/general/Button';
+import { SectionHeader } from 'components/general/SectionHeader';
+
+interface NotFoundPagePropsI {
+  title?: string;
 }
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+function NotFoundPage({ title }: NotFoundPagePropsI) {
+  const DATA = {
+    title: 'Page not found',
+    buttons: [
+      {
+        type: 'Primary_Blue',
+        href: '/',
+        label: 'Homepage'
+      },
+      {
+        type: 'Secondary_White',
+        href: '/contact-us',
+        label: 'Contact Us'
+      }
+    ]
+  };
 
-const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
+    <Main>
+      <div className="section-gap">
+        <div className="container">
+          <div className="section-inner-gap justify-center text-center">
+            <SectionHeader icon="icon-sections_404" as="h1" title={title || DATA.title} />
+
+            <nav className="flex flex-col md:flex-row gap-64 items-center justify-center">
+              {DATA.buttons.map(({ type, href, label }, buttonIndex) => (
+                <Button
+                  key={`button_${buttonIndex}`}
+                  type={type}
+                  href={href}
+                  label={label}
+                  icon="icon-general_arrow"
+                />
+              ))}
+            </nav>
+          </div>
+        </div>
+      </div>
+    </Main>
+  );
 }
 
-export default NotFoundPage
-
-export const Head: HeadFC = () => <title>Not found</title>
+export default NotFoundPage;
