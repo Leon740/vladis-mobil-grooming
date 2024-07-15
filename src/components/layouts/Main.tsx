@@ -73,6 +73,14 @@ export function Main({ children }: MainPropsI) {
   //       label: 'FAQs',
   //       url: '/faqs/'
   //     },
+  //     {
+  //       label: 'Contact Us',
+  //       url: '/contact-us/'
+  //     },
+  //     {
+  //       label: 'Book Now',
+  //       url: '/book-now/'
+  //     },
   // {
   //   label: 'Contact Us',
   //   url: '/contact-us/'
