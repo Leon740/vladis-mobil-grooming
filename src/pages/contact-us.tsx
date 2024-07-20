@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { FormEvent, useState } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { navigate } from 'gatsby';
 import { SectionHeader } from 'components/general/SectionHeader';
 import { FormInput } from 'components/general/FormInput';
 import { Button } from 'components/general/Button';
@@ -58,6 +59,26 @@ function ContactUsPage() {
     }
   ];
 
+  const handleSubmitFn = async (values: ValuesI, actions) => {
+    const response = await fetch('https://formspree.io/f/mldrdawb', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    });
+    console.log(JSON.stringify(values));
+
+    if (response.ok) {
+      actions.resetForm();
+      navigate('/');
+      alert('Message sent!');
+    } else {
+      actions.resetForm();
+      alert('Failed to send message.');
+    }
+  };
+
   return (
     <Main>
       <>
@@ -91,12 +112,7 @@ function ContactUsPage() {
                     .max(500, 'Message should be less than 500 characters')
                     .required('Message is required')
                 })}
-                onSubmit={(values: ValuesI, { setSubmitting }) => {
-                  setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                  }, 400);
-                }}
+                onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
               >
                 {({ errors, touched }) => (
                   <Form className="section-inner-gap w-full xl:w-1/2">
