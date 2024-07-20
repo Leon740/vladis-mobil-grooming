@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from './Icon';
 
 interface ButtonPropsI {
   type: 'Secondary_White' | 'Primary_Blue' | string;
@@ -17,7 +18,7 @@ function ButtonInner({ label, icon, iconClassName = '' }: ButtonInnerPropsT) {
   return (
     <>
       {label}
-      {icon && <i className={`${icon} text-16 ${iconClassName}`} />}
+      {icon && <Icon icon={icon} className={`text-16 ${iconClassName}`} />}
     </>
   );
 }
