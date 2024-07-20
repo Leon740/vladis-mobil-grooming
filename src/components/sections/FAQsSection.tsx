@@ -12,6 +12,7 @@ import {
 } from 'components/pure/Accordion';
 import { Icon } from 'components/general/Icon';
 import { Button } from 'components/general/Button';
+import { Paragraph } from 'components/general/Paragraph';
 
 interface FAQsSectionPropsI {
   displayAllFaqs?: boolean;
@@ -187,7 +188,7 @@ export function FAQsSection({ displayAllFaqs = false }: FAQsSectionPropsI) {
                       </AccordionHeader>
                       <AccordionBody>
                         <div className="p-32 pt-0 text-ss3-20-regular">
-                          {paragraph.data.paragraph}
+                          <Paragraph paragraph={paragraph} />
                         </div>
                       </AccordionBody>
                     </div>

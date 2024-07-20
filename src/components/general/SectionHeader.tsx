@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+
 import { IconImg } from './IconImg';
+import { Paragraph } from './Paragraph';
 
 interface SectionHeaderPropsI {
   icon?: string;
@@ -27,7 +28,7 @@ export function SectionHeader({ icon, as = 'h2', title, paragraph }: SectionHead
 
         {paragraph && (
           <div className="text-ss3-20-regular">
-            <ReactMarkdown>{paragraph}</ReactMarkdown>
+            <Paragraph paragraph={paragraph} />
           </div>
         )}
       </section>
