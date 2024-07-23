@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useState, useEffect, ReactElement } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { Img } from 'components/general/Img';
 
 interface LoaderPropsI {
-  children: ReactElement;
+  children: ReactNode;
   logo: {
     url: string;
     alt: string;

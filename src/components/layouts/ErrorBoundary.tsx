@@ -1,10 +1,10 @@
 import React from 'react';
 
 import NotFoundPage from 'pages/404';
-import { Component, ReactElement, ErrorInfo } from 'react';
+import { Component, ReactNode, ErrorInfo } from 'react';
 
 interface ErrorBoundaryPropsI {
-  children: ReactElement;
+  children: ReactNode;
   // fallback: FC<{ errorMsg: string }>;
 }
 

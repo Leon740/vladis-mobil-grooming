@@ -40,7 +40,7 @@ export function Header({ data }: HeaderPropsI) {
   }, [menuIsActive, windowSize]);
 
   return (
-    <header className="bg-white py-8 sticky top-0 z-20">
+    <header className="bg-white py-8 sticky top-0 z-20 border-b-2 border-solid border-gray-100">
       <div className="container lg:flex lg:justify-between lg:items-center">
         <div className="flex flex-row justify-between items-center">
           <Link to="/">

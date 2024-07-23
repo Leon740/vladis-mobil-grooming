@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql, useStaticQuery } from 'gatsby';
 
 import { Img } from 'components/general/Img';
 import { Button } from 'components/general/Button';
@@ -18,33 +18,33 @@ export function HeroSection() {
     };
   }
 
-  // const DATA_0: DATAI = {
-  //   title: 'Doorstep Dog Grooming',
-  //   paragraph: 'Serving PA, NJ, NY, DE',
-  //   buttonLabel: '215-987-7259',
-  //   buttonUrl: 'tel:2159877259',
-  //   img: {
-  //     url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/hero/hero_img.png',
-  //     alt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY'
-  //   }
-  // };
-
-  const query = graphql`
-    query {
-      strapiHeroSection {
-        title
-        paragraph
-        buttonLabel
-        buttonUrl
-        img {
-          url
-          alt
-        }
-      }
+  const DATA: DATAI = {
+    title: 'Doorstep Dog Grooming',
+    paragraph: 'Serving PA, NJ, NY, DE',
+    buttonLabel: '267-977-1310',
+    buttonUrl: 'tel:2679771310',
+    img: {
+      url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/hero/hero_img.png',
+      alt: 'Vladis Mobile Grooming & Spa in PA, NJ, DE, NY'
     }
-  `;
+  };
 
-  const DATA: DATAI = useStaticQuery(query).strapiHeroSection;
+  // const query = graphql`
+  //   query {
+  //     strapiHeroSection {
+  //       title
+  //       paragraph
+  //       buttonLabel
+  //       buttonUrl
+  //       img {
+  //         url
+  //         alt
+  //       }
+  //     }
+  //   }
+  // `;
+
+  // const DATA: DATAI = useStaticQuery(query).strapiHeroSection;
 
   return (
     <div className="section-gap">

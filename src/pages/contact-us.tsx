@@ -1,28 +1,16 @@
-import React, { FormEvent, useState } from 'react';
+import React from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
+
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+
 import { navigate } from 'gatsby';
+
 import { SectionHeader } from 'components/general/SectionHeader';
 import { FormInput } from 'components/general/FormInput';
 import { Button } from 'components/general/Button';
-
-interface ValuesI {
-  name: string;
-  email: string;
-  mobile: string;
-  message: string;
-}
-
-interface FormInputI {
-  as?: 'input' | 'textarea' | 'select';
-  name: keyof ValuesI;
-  type: 'text' | 'email' | 'textarea';
-  isRequired: boolean;
-  placeholder?: string;
-}
 
 function ContactUsPage() {
   const DATA = {
@@ -30,6 +18,21 @@ function ContactUsPage() {
     title: 'Contact Us',
     paragraph: 'Have any questions or concerns? Feel free to ask.'
   };
+
+  interface ValuesI {
+    name: string;
+    email: string;
+    mobile: string;
+    message: string;
+  }
+
+  interface FormInputI {
+    as?: 'input' | 'textarea' | 'select';
+    name: keyof ValuesI;
+    type: 'text' | 'email' | 'textarea';
+    isRequired: boolean;
+    placeholder?: string;
+  }
 
   const formFields: FormInputI[] = [
     {

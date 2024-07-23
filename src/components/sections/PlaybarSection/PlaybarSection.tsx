@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql, useStaticQuery } from 'gatsby';
 
 import { Img } from 'components/general/Img';
 
@@ -15,71 +15,71 @@ export function PlaybarSection() {
     img: ImgI[];
   }
 
-  // const DATA_0: DATAI = {
-  //   img: [
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_1.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_2.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_3.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_4.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_5.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_6.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_7.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_8.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_9.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_10.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_11.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     },
-  //     {
-  //       url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_12.jpg',
-  //       alt: 'Vladis Mobile Grooming & Spa'
-  //     }
-  //   ]
-  // };
-
-  const query = graphql`
-    query {
-      strapiPlaybarSection {
-        img {
-          url
-          alt
-        }
+  const DATA: DATAI = {
+    img: [
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_1.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_2.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_3.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_4.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_5.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_6.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_7.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_8.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_9.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_10.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_11.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
+      },
+      {
+        url: 'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/playbar/playbar_12.jpg',
+        alt: 'Vladis Mobile Grooming & Spa'
       }
-    }
-  `;
+    ]
+  };
 
-  const DATA: DATAI = useStaticQuery(query).strapiPlaybarSection;
+  // const query = graphql`
+  //   query {
+  //     strapiPlaybarSection {
+  //       img {
+  //         url
+  //         alt
+  //       }
+  //     }
+  //   }
+  // `;
+
+  // const DATA: DATAI = useStaticQuery(query).strapiPlaybarSection;
 
   return (
     <div className="overflow-hidden">

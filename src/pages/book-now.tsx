@@ -1,36 +1,17 @@
 import React from 'react';
+import { Fragment } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
+
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+
 import { navigate } from 'gatsby';
+
 import { SectionHeader } from 'components/general/SectionHeader';
 import { FormInput } from 'components/general/FormInput';
 import { Button } from 'components/general/Button';
-import { Fragment } from 'react/jsx-runtime';
-
-interface ValuesI {
-  name: string;
-  email: string;
-  mobile: string;
-  message: string;
-  contact: string;
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
-}
-
-interface FormInputI {
-  as?: 'input' | 'textarea' | 'select';
-  name: keyof ValuesI;
-  label?: string;
-  type: 'text' | 'email' | 'textarea';
-  isRequired: boolean;
-  placeholder?: string;
-  options?: string[];
-}
 
 function BookNowPage() {
   const DATA = {
@@ -38,6 +19,28 @@ function BookNowPage() {
     title: 'Request an appointment',
     paragraph: 'Have any questions or concerns? Feel free to [ask](/contact-us/).'
   };
+
+  interface ValuesI {
+    name: string;
+    email: string;
+    mobile: string;
+    message: string;
+    contact: string;
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+  }
+
+  interface FormInputI {
+    as?: 'input' | 'textarea' | 'select';
+    name: keyof ValuesI;
+    label?: string;
+    type: 'text' | 'email' | 'textarea';
+    isRequired: boolean;
+    placeholder?: string;
+    options?: string[];
+  }
 
   const formFields: FormInputI[] = [
     {

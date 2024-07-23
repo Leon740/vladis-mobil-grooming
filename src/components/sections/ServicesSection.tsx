@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql, useStaticQuery } from 'gatsby';
 
 import { useState } from 'react';
 import { SectionHeader } from 'components/general/SectionHeader';
@@ -45,149 +45,149 @@ export function ServicesSection({ displayAllServices = false }: ServicesSectionP
     buttonLabel: string;
   }
 
-  // const DATA_0: DATAI = {
-  //   header: {
-  //     icon: 'icon-sections_services',
-  //     title: 'Grooming made <b>simple</b> <br /> for you and your dog',
-  //     paragraph: {
-  //       data: {
-  //         paragraph: ''
-  //       }
-  //     }
-  //   },
-  //   packages: [
-  //     {
-  //       name: 'Package 1',
-  //       title: 'Full Groom',
-  //       paragraph:
-  //         'This package is perfect for our long-haired pals! It includes all the basics, plus a thorough, full-body and face haircut.'
-  //     },
-  //     {
-  //       name: 'Package 2',
-  //       title: 'Bath & Brush',
-  //       paragraph:
-  //         "This package is perfect for short-haired breeds not in need of a haircut. It's also a speedy solution for any breed just needing a refreshing bath."
-  //     }
-  //   ],
-  //   services: [
-  //     {
-  //       icon: 'icon-services_bath',
-  //       title: 'Bath',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             "Our vans are loaded with fresh, warm water because baths are crucial to the grooming process. We use premium shampoos and conditioners tailored to your dog’s needs but if you have a prescribed medicated shampoo, we're happy to use that too (a small additional fee applies)."
-  //         }
-  //       }
-  //     },
-  //     {
-  //       icon: 'icon-services_blowout',
-  //       title: 'Blow Out',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             "There are no cages onboard our vans. We hand-dry your pup from nose to tail. This process not only sheds excess fur but also preps those thick, furry coats for haircuts. Plus, it's a perfect time for your groomer to inspect your dog’s skin and coat for issues not readily visible."
-  //         }
-  //       }
-  //     },
-  //     {
-  //       icon: 'icon-services_haircut',
-  //       title: 'Haircut',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             "Every pup has their own style. Whether it's a neat summer shave or just a little off the top, your groomer will consult with you to match your requests while honoring your pet’s health and safety."
-  //         }
-  //       },
-  //       disabled: 2
-  //     },
-  //     {
-  //       icon: 'icon-services_brush',
-  //       title: 'Brush',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             'Your groomer is equipped with the highest quality brushes, combs, and tools that suit your dog’s needs and ensures their fur ends up feeling as good as it looks.'
-  //         }
-  //       }
-  //     },
-  //     {
-  //       icon: 'icon-services_ears',
-  //       title: 'Ears',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             "We only use top-tier, vet-approved ear cleaners for your pup. We’ll pluck those floppy (or pointy) ears upon request (additional fee applies) and if we spot any irritation or infection, we'll let you know."
-  //         }
-  //       }
-  //     },
-  //     {
-  //       icon: 'icon-services_nails',
-  //       title: 'Nails',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             "Maintaining the right nail length is crucial for your pup's health and well-being. We include nail dremeling (filing) in our service, but if your dog isn't a fan, we'll switch to clipping."
-  //         }
-  //       }
-  //     },
-  //     {
-  //       icon: 'icon-services_teeth',
-  //       title: 'Teeth',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             'We use vet-approved toothpaste and soft bristle toothbrushes to boost your pup’s oral health and freshen their breath. Your groomer will report any signs of poor dental health so you can address it.'
-  //         }
-  //       }
-  //     },
-  //     {
-  //       icon: 'icon-services_anal',
-  //       title: 'Anal Glands',
-  //       paragraph: {
-  //         data: {
-  //           paragraph:
-  //             "Some dogs need more care in this department. Upon request, we'll provide this service at no extra charge. Unsure if it’s necessary? Your groomer will be there to advise, or you can consult your vet."
-  //         }
-  //       }
-  //     }
-  //   ],
-  //   buttonLabel: 'Learn more about our Services'
-  // };
-
-  const query = graphql`
-    query {
-      strapiServicesSection {
-        header {
-          icon
-          title
-          paragraph {
-            data {
-              paragraph
-            }
-          }
+  const DATA: DATAI = {
+    header: {
+      icon: 'icon-sections_services',
+      title: 'Grooming made <b>simple</b> <br /> for you and your dog',
+      paragraph: {
+        data: {
+          paragraph: ''
         }
-        packages {
-          name
-          title
-          paragraph
-        }
-        services {
-          icon
-          title
-          paragraph {
-            data {
-              paragraph
-            }
-          }
-          disabled
-        }
-        buttonLabel
       }
-    }
-  `;
+    },
+    packages: [
+      {
+        name: 'Package 1',
+        title: 'Full Groom',
+        paragraph:
+          'This package is perfect for our long-haired pals! It includes all the basics, plus a thorough, full-body and face haircut.'
+      },
+      {
+        name: 'Package 2',
+        title: 'Bath & Brush',
+        paragraph:
+          "This package is perfect for short-haired breeds not in need of a haircut. It's also a speedy solution for any breed just needing a refreshing bath."
+      }
+    ],
+    services: [
+      {
+        icon: 'icon-services_bath',
+        title: 'Bath',
+        paragraph: {
+          data: {
+            paragraph:
+              "Our vans are loaded with fresh, warm water because baths are crucial to the grooming process. We use premium shampoos and conditioners tailored to your dog’s needs but if you have a prescribed medicated shampoo, we're happy to use that too (a small additional fee applies)."
+          }
+        }
+      },
+      {
+        icon: 'icon-services_blowout',
+        title: 'Blow Out',
+        paragraph: {
+          data: {
+            paragraph:
+              "There are no cages onboard our vans. We hand-dry your pup from nose to tail. This process not only sheds excess fur but also preps those thick, furry coats for haircuts. Plus, it's a perfect time for your groomer to inspect your dog’s skin and coat for issues not readily visible."
+          }
+        }
+      },
+      {
+        icon: 'icon-services_haircut',
+        title: 'Haircut',
+        paragraph: {
+          data: {
+            paragraph:
+              "Every pup has their own style. Whether it's a neat summer shave or just a little off the top, your groomer will consult with you to match your requests while honoring your pet’s health and safety."
+          }
+        },
+        disabled: 2
+      },
+      {
+        icon: 'icon-services_brush',
+        title: 'Brush',
+        paragraph: {
+          data: {
+            paragraph:
+              'Your groomer is equipped with the highest quality brushes, combs, and tools that suit your dog’s needs and ensures their fur ends up feeling as good as it looks.'
+          }
+        }
+      },
+      {
+        icon: 'icon-services_ears',
+        title: 'Ears',
+        paragraph: {
+          data: {
+            paragraph:
+              "We only use top-tier, vet-approved ear cleaners for your pup. We’ll pluck those floppy (or pointy) ears upon request (additional fee applies) and if we spot any irritation or infection, we'll let you know."
+          }
+        }
+      },
+      {
+        icon: 'icon-services_nails',
+        title: 'Nails',
+        paragraph: {
+          data: {
+            paragraph:
+              "Maintaining the right nail length is crucial for your pup's health and well-being. We include nail dremeling (filing) in our service, but if your dog isn't a fan, we'll switch to clipping."
+          }
+        }
+      },
+      {
+        icon: 'icon-services_teeth',
+        title: 'Teeth',
+        paragraph: {
+          data: {
+            paragraph:
+              'We use vet-approved toothpaste and soft bristle toothbrushes to boost your pup’s oral health and freshen their breath. Your groomer will report any signs of poor dental health so you can address it.'
+          }
+        }
+      },
+      {
+        icon: 'icon-services_anal',
+        title: 'Anal Glands',
+        paragraph: {
+          data: {
+            paragraph:
+              "Some dogs need more care in this department. Upon request, we'll provide this service at no extra charge. Unsure if it’s necessary? Your groomer will be there to advise, or you can consult your vet."
+          }
+        }
+      }
+    ],
+    buttonLabel: 'Learn more about our Services'
+  };
 
-  const DATA: DATAI = useStaticQuery(query).strapiServicesSection;
+  // const query = graphql`
+  //   query {
+  //     strapiServicesSection {
+  //       header {
+  //         icon
+  //         title
+  //         paragraph {
+  //           data {
+  //             paragraph
+  //           }
+  //         }
+  //       }
+  //       packages {
+  //         name
+  //         title
+  //         paragraph
+  //       }
+  //       services {
+  //         icon
+  //         title
+  //         paragraph {
+  //           data {
+  //             paragraph
+  //           }
+  //         }
+  //         disabled
+  //       }
+  //       buttonLabel
+  //     }
+  //   }
+  // `;
+
+  // const DATA: DATAI = useStaticQuery(query).strapiServicesSection;
 
   const [isDisplayAllServices, setIsDisplayAllServices] = useState(displayAllServices);
 
