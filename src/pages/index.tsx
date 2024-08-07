@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Main } from 'components/layouts/Main';
+import { Wave } from 'components/general/Wave';
 import { HeroSection } from 'components/sections/HeroSection';
 import { FeaturesSection } from 'components/sections/FeaturesSection';
 import { ServicesSection } from 'components/sections/ServicesSection';
@@ -11,14 +12,23 @@ import { FAQsSection } from 'components/sections/FAQsSection';
 function IndexPage() {
   return (
     <Main>
-      <>
-        <HeroSection />
+      <HeroSection />
+
+      <Wave>
         <FeaturesSection />
-        <ServicesSection />
+      </Wave>
+
+      <ServicesSection />
+
+      <Wave>
         <BeforeTheSessionSection />
-        <ReviewsSection />
+      </Wave>
+
+      <ReviewsSection />
+
+      <Wave>
         <FAQsSection />
-      </>
+      </Wave>
     </Main>
   );
 }

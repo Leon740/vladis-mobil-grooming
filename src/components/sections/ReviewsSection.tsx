@@ -165,55 +165,53 @@ export function ReviewsSection() {
   // const DATA: DATAI = useStaticQuery(query).strapiReviewsSection;
 
   return (
-    <div className="section-gap">
-      <div className="section-inner-gap">
-        <div className="container">
-          <SectionHeader
-            icon={DATA.header.icon}
-            title={DATA.header.title}
-            paragraph={DATA.header.paragraph.data.paragraph}
-          />
-        </div>
+    <div className="section-inner-gap">
+      <div className="container">
+        <SectionHeader
+          icon={DATA.header.icon}
+          title={DATA.header.title}
+          paragraph={DATA.header.paragraph.data.paragraph}
+        />
+      </div>
 
-        <div className="overflow-auto">
-          <div className="px-32 lg:container">
-            <ul className="flex flex-row gap-32 lg:block lg:columns-3">
-              {DATA.reviews.map(
-                ({ yelp, title, paragraph, author, imgUrl, imgAlt }: ReviewI, reviewIndex) => (
-                  <li
-                    key={`review_${reviewIndex}`}
-                    className="bg-white flex flex-col w-[384px] lg:w-auto lg:mt-32 lg:first-of-type:mt-0 flex-shrink-0 rounded-16 overflow-hidden"
-                  >
-                    <Img src={imgUrl} alt={imgAlt} className="" />
-                    <div className="flex flex-col justify-between gap-16 p-32 h-full">
-                      <section
-                        aria-labelledby={`review_title_${reviewIndex}`}
-                        className="flex flex-col gap-16"
-                      >
-                        <div className="flex flex-row gap-16 items-center">
-                          <Img
-                            src={yelp ? ImgYelp : ImgGoogle}
-                            alt="Vladis Mobile Grooming & Spa 5 Stars Rating"
-                            className="w-32"
-                          />
-                          <Img
-                            src={ImgStars}
-                            alt="Vladis Mobile Grooming & Spa 5 Stars Rating"
-                            className="w-128"
-                          />
-                        </div>
-                        <h4 id={`review_title_${reviewIndex}`} className="text-ss3-20-bold">
-                          &quot;{title}&quot;
-                        </h4>
-                        <p className="text-ss3-20-regular">{paragraph}</p>
-                      </section>
-                      <span className="text-cali-16">- {author}</span>
-                    </div>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
+      <div className="overflow-auto">
+        <div className="px-32 lg:container">
+          <ul className="flex flex-row gap-32 lg:block lg:columns-3">
+            {DATA.reviews.map(
+              ({ yelp, title, paragraph, author, imgUrl, imgAlt }: ReviewI, reviewIndex) => (
+                <li
+                  key={`review_${reviewIndex}`}
+                  className="bg-white flex flex-col w-[384px] lg:w-auto lg:mt-32 lg:first-of-type:mt-0 flex-shrink-0 rounded-16 overflow-hidden"
+                >
+                  <Img src={imgUrl} alt={imgAlt} className="" />
+                  <div className="flex flex-col justify-between gap-16 p-32 h-full">
+                    <section
+                      aria-labelledby={`review_title_${reviewIndex}`}
+                      className="flex flex-col gap-16"
+                    >
+                      <div className="flex flex-row gap-16 items-center">
+                        <Img
+                          src={yelp ? ImgYelp : ImgGoogle}
+                          alt="Vladis Mobile Grooming & Spa 5 Stars Rating"
+                          className="w-32"
+                        />
+                        <Img
+                          src={ImgStars}
+                          alt="Vladis Mobile Grooming & Spa 5 Stars Rating"
+                          className="w-128"
+                        />
+                      </div>
+                      <h4 id={`review_title_${reviewIndex}`} className="text-ss3-20-bold">
+                        &quot;{title}&quot;
+                      </h4>
+                      <p className="text-ss3-20-regular">{paragraph}</p>
+                    </section>
+                    <span className="text-cali-16">- {author}</span>
+                  </div>
+                </li>
+              )
+            )}
+          </ul>
         </div>
       </div>
     </div>

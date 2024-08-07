@@ -11,7 +11,7 @@ import {
   AccordionBody
 } from 'components/pure/Accordion';
 import { Icon } from 'components/general/Icon';
-import { Button } from 'components/general/Button';
+import { ButtonPaw } from 'components/general/Button';
 import { Paragraph } from 'components/general/Paragraph';
 
 interface FAQsSectionPropsI {
@@ -154,59 +154,57 @@ export function FAQsSection({ displayAllFaqs = false }: FAQsSectionPropsI) {
     isDisplayAllFaqs ? DATA.faq : DATA.faq.length > 7 ? DATA.faq.slice(7) : DATA.faq;
 
   return (
-    <div className="section-gap">
-      <div className="container">
-        <div className="section-inner-gap">
-          <SectionHeader
-            icon={DATA.header.icon}
-            title={DATA.header.title}
-            paragraph={DATA.header.paragraph.data.paragraph}
-          />
+    <div className="container">
+      <div className="section-inner-gap">
+        <SectionHeader
+          icon={DATA.header.icon}
+          title={DATA.header.title}
+          paragraph={DATA.header.paragraph.data.paragraph}
+        />
 
-          <Accordion>
-            <ul className="flex flex-col gap-32">
-              {getAllFaqsFn().map(({ title, paragraph }: FAQI, faqIndex) => (
-                <AccordionItem
-                  key={`faq_${faqIndex}`}
-                  id={faqIndex}
-                  render={(isActive) => (
-                    <div className="rounded-16 bg-white">
-                      <AccordionHeader>
-                        <div
-                          className={`p-32 w-full flex flex-row items-center justify-between transition-all hover:text-sky-500 ${
-                            isActive ? 'text-sky-500' : ''
+        <Accordion>
+          <ul className="flex flex-col gap-32">
+            {getAllFaqsFn().map(({ title, paragraph }: FAQI, faqIndex) => (
+              <AccordionItem
+                key={`faq_${faqIndex}`}
+                id={faqIndex}
+                render={(isActive) => (
+                  <div className="rounded-16 bg-white">
+                    <AccordionHeader>
+                      <div
+                        className={`p-32 w-full flex flex-row items-center justify-between transition-all hover:text-sky-500 ${
+                          isActive ? 'text-sky-500' : ''
+                        }`}
+                      >
+                        <span className="text-ss3-20-bold text-left transition-all">{title}</span>
+                        <Icon
+                          icon="icon-general_arrow"
+                          className={`text-20 transition-all ${
+                            isActive ? '-rotate-90' : 'rotate-90'
                           }`}
-                        >
-                          <span className="text-ss3-20-bold text-left transition-all">{title}</span>
-                          <Icon
-                            icon="icon-general_arrow"
-                            className={`text-20 transition-all ${
-                              isActive ? '-rotate-90' : 'rotate-90'
-                            }`}
-                          />
-                        </div>
-                      </AccordionHeader>
-                      <AccordionBody>
-                        <div className="p-32 pt-0 text-ss3-20-regular">
-                          <Paragraph paragraph={paragraph} />
-                        </div>
-                      </AccordionBody>
-                    </div>
-                  )}
-                />
-              ))}
-            </ul>
-          </Accordion>
+                        />
+                      </div>
+                    </AccordionHeader>
+                    <AccordionBody>
+                      <div className="p-32 pt-0 text-ss3-20-regular">
+                        <Paragraph paragraph={paragraph} />
+                      </div>
+                    </AccordionBody>
+                  </div>
+                )}
+              />
+            ))}
+          </ul>
+        </Accordion>
 
-          {!isDisplayAllFaqs && (
-            <Button
-              type="Secondary_White"
-              onClick={() => setIsDisplayAllFaqs(true)}
-              label={DATA.buttonLabel}
-              icon="icon-general_arrow"
-            />
-          )}
-        </div>
+        {!isDisplayAllFaqs && (
+          <ButtonPaw
+            type="Secondary_White"
+            onClick={() => setIsDisplayAllFaqs(true)}
+            label={DATA.buttonLabel}
+            icon="icon-general_arrow"
+          />
+        )}
       </div>
     </div>
   );

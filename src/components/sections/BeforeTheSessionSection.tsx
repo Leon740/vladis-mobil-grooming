@@ -99,16 +99,14 @@ export function BeforeTheSessionSection() {
   // const DATA: DATAI = useStaticQuery(query).strapiBeforeTheSessionSection;
 
   return (
-    <div className="section-gap">
-      <div className="container">
-        <div className="section-inner-gap">
-          <SectionHeader
-            icon={DATA.header.icon}
-            title={DATA.header.title}
-            paragraph={DATA.header.paragraph.data.paragraph}
-          />
-          <List name="BeforeTheSession" list={DATA.list} />
-        </div>
+    <div className="container">
+      <div className="section-inner-gap">
+        <SectionHeader
+          icon={DATA.header.icon}
+          title={DATA.header.title}
+          paragraph={DATA.header.paragraph.data.paragraph}
+        />
+        <List name="BeforeTheSession" list={DATA.list} />
       </div>
     </div>
   );

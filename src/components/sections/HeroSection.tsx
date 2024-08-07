@@ -47,9 +47,9 @@ export function HeroSection() {
   // const DATA: DATAI = useStaticQuery(query).strapiHeroSection;
 
   return (
-    <div className="section-gap">
+    <div className="section-gap pb-0">
       <div className="container">
-        <div className="section-inner-gap xl:flex-row xl:justify-between">
+        <div className="section-inner-gap xl:flex-row xl:items-center xl:justify-between">
           <div className="flex flex-col gap-32">
             <SectionHeader as="h1" title={DATA.title} paragraph={DATA.paragraph} />
             <Button

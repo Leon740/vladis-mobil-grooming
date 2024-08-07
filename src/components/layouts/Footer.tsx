@@ -24,7 +24,7 @@ export function Footer({ data }: FooterPropsI) {
   const date = new Date();
 
   return (
-    <>
+    <div className="pt-64 xl:pt-128">
       <Img src={img.url} alt={img.alt} className="max-w-max mx-auto" />
 
       <div className="bg-white">
@@ -56,6 +56,6 @@ export function Footer({ data }: FooterPropsI) {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

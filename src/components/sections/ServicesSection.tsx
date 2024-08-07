@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { SectionHeader } from 'components/general/SectionHeader';
 import { List } from 'components/general/List';
 import { IconImg } from 'components/general/IconImg';
-import { Button } from 'components/general/Button';
+import { ButtonPaw } from 'components/general/Button';
 
 interface ServicesSectionPropsI {
   displayAllServices?: boolean;
@@ -192,79 +192,77 @@ export function ServicesSection({ displayAllServices = false }: ServicesSectionP
   const [isDisplayAllServices, setIsDisplayAllServices] = useState(displayAllServices);
 
   return (
-    <div className="section-gap">
-      <div className="container">
-        <div className="section-inner-gap">
-          <SectionHeader
-            icon={DATA.header.icon}
-            title={DATA.header.title}
-            paragraph={DATA.header.paragraph.data.paragraph}
-          />
+    <div className="container">
+      <div className="section-inner-gap">
+        <SectionHeader
+          icon={DATA.header.icon}
+          title={DATA.header.title}
+          paragraph={DATA.header.paragraph.data.paragraph}
+        />
 
-          <ul className="flex flex-col gap-32">
-            {DATA.packages.map(({ name, title, paragraph }: PackageI, packageIndex) => {
-              const isEven = packageIndex % 2 === 0;
+        <ul className="flex flex-col gap-32">
+          {DATA.packages.map(({ name, title, paragraph }: PackageI, packageIndex) => {
+            const isEven = packageIndex % 2 === 0;
 
-              return (
-                <li
-                  key={`package_${packageIndex}`}
-                  className={`flex flex-col gap-32 p-32 rounded-16 ${
-                    isEven ? 'bg-sky-500' : 'bg-white'
+            return (
+              <li
+                key={`package_${packageIndex}`}
+                className={`flex flex-col gap-32 p-32 rounded-16 ${
+                  isEven ? 'bg-sky-500' : 'bg-white'
+                }`}
+              >
+                <span
+                  className={`font-ss3-bold text-16 max-w-max py-4 px-16 rounded-16 bg-sky-500 ${
+                    isEven ? 'bg-white text-sky-500' : 'bg-sky-500 text-white'
                   }`}
                 >
-                  <span
-                    className={`font-ss3-bold text-16 max-w-max py-4 px-16 rounded-16 bg-sky-500 ${
-                      isEven ? 'bg-white text-sky-500' : 'bg-sky-500 text-white'
-                    }`}
-                  >
-                    {name}
-                  </span>
-                  <h3 className="font-calistoga-regular text-24">{title}</h3>
-                  <p className="text-ss3-20-regular">{paragraph}</p>
-                  <ul className="flex flex-col gap-32 xl:flex-row">
-                    {DATA.services.map(({ icon, title, disabled }, serviceIndex) => (
-                      <li
-                        key={`service_${serviceIndex}`}
-                        className="flex flex-row gap-16 items-center"
+                  {name}
+                </span>
+                <h3 className="font-calistoga-regular text-24">{title}</h3>
+                <p className="text-ss3-20-regular">{paragraph}</p>
+                <ul className="flex flex-col gap-32 xl:flex-row">
+                  {DATA.services.map(({ icon, title, disabled }, serviceIndex) => (
+                    <li
+                      key={`service_${serviceIndex}`}
+                      className="flex flex-row gap-16 items-center"
+                    >
+                      <IconImg
+                        icon={icon}
+                        iconClassName={`text-48 text-black ${
+                          isEven ? 'text-white' : 'text-sky-500'
+                        } ${disabled === packageIndex + 1 ? 'text-slate-400' : ''}`}
+                      />
+                      <span
+                        className={`text-ss3-20-regular ${
+                          disabled === packageIndex + 1 ? 'text-slate-400 line-through' : ''
+                        }`}
                       >
-                        <IconImg
-                          icon={icon}
-                          iconClassName={`text-32 text-black ${
-                            isEven ? 'text-white' : 'text-sky-500'
-                          } ${disabled === packageIndex + 1 ? 'text-slate-400' : ''}`}
-                        />
-                        <span
-                          className={`text-ss3-20-regular ${
-                            disabled === packageIndex + 1 ? 'text-slate-400 line-through' : ''
-                          }`}
-                        >
-                          {title}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              );
-            })}
-          </ul>
+                        {title}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          })}
+        </ul>
 
-          {!isDisplayAllServices && (
-            <Button
-              type="Secondary_White"
-              onClick={() => setIsDisplayAllServices(true)}
-              label={DATA.buttonLabel}
-              icon="icon-general_arrow"
-            />
-          )}
+        {!isDisplayAllServices && (
+          <ButtonPaw
+            type="Secondary_White"
+            onClick={() => setIsDisplayAllServices(true)}
+            label={DATA.buttonLabel}
+            icon="icon-general_arrow"
+          />
+        )}
 
-          {displayAllServices && (
-            <h2 className="text-cali-48 mt-64">
-              Learn more about our <span className="text-sky-500">Services</span>
-            </h2>
-          )}
+        {displayAllServices && (
+          <h2 className="text-cali-48 mt-64">
+            Learn more about our <span className="text-sky-500">Services</span>
+          </h2>
+        )}
 
-          {isDisplayAllServices && <List name="Services" list={DATA.services} />}
-        </div>
+        {isDisplayAllServices && <List name="Services" list={DATA.services} />}
       </div>
     </div>
   );
