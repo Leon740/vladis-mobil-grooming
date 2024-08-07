@@ -31,7 +31,7 @@ export function Header({ data }: HeaderPropsI) {
 
   useEffect(() => {
     if (menuRf.current) {
-      if (windowSize.width < 1024) {
+      if (windowSize.width < 1280) {
         menuRf.current.style.maxHeight = menuIsActive ? `${menuRf.current.scrollHeight}px` : `0px`;
       } else {
         menuRf.current.style.maxHeight = `${menuRf.current.scrollHeight}px`;
@@ -40,8 +40,8 @@ export function Header({ data }: HeaderPropsI) {
   }, [menuIsActive, windowSize]);
 
   return (
-    <header className="bg-white py-8 sticky top-0 z-20 border-b-2 border-solid border-gray-100">
-      <div className="container lg:flex lg:justify-between lg:items-center">
+    <header className="bg-white sticky top-0 z-20 border-b-2 border-solid border-gray-100">
+      <div className="container xl:flex xl:justify-between xl:items-center">
         <div className="flex flex-row justify-between items-center">
           <Link to="/">
             <Img src={logo.url} alt={logo.alt} className="w-128" />
@@ -51,13 +51,15 @@ export function Header({ data }: HeaderPropsI) {
             type="Primary_Blue"
             label={links[links.length - 1].label}
             href={links[links.length - 1].url}
-            className="lg:hidden"
+            icon="icon-general_calendar"
+            iconClassName="-order-1"
+            className="xl:hidden"
           />
 
           <button
             type="button"
             aria-label="Toggle Mobile Menu"
-            className={`lg:hidden flex flex-col items-center transition-all hover:text-sky-500 ${
+            className={`xl:hidden flex flex-col items-center transition-all hover:text-sky-500 ${
               menuIsActive ? 'text-sky-500' : ''
             }`}
             onClick={() => setMenuIsActive((prev) => !prev)}
@@ -68,7 +70,7 @@ export function Header({ data }: HeaderPropsI) {
         </div>
 
         <div className="overflow-hidden transition-all" ref={menuRf}>
-          <nav className="flex flex-col gap-32 pt-32 lg:flex-row lg:pt-0 lg:items-center">
+          <nav className="flex flex-col gap-32 py-16 xl:flex-row xl:p-0 xl:items-center">
             {links.slice(0, links.length - 1).map(({ url, label }: LinkI, linkIndex) => (
               <Link
                 key={`link_${linkIndex}`}
@@ -84,7 +86,9 @@ export function Header({ data }: HeaderPropsI) {
               type="Primary_Blue"
               label={links[links.length - 1].label}
               href={links[links.length - 1].url}
-              className="hidden lg:block"
+              icon="icon-general_calendar"
+              iconClassName="-order-1"
+              className="hidden xl:flex"
             />
           </nav>
         </div>

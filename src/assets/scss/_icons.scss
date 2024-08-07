@@ -14,6 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-general_calendar:before {
+  content: '\e918';
+}
 .icon-contacts_phone:before {
   content: '\e917';
 }
