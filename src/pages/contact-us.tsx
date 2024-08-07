@@ -27,11 +27,12 @@ function ContactUsPage() {
   }
 
   interface FormInputI {
-    as?: 'input' | 'textarea' | 'select';
+    as?: 'input' | 'textarea' | 'select' | 'mobile';
     name: keyof ValuesI;
     type: 'text' | 'email' | 'textarea';
     isRequired: boolean;
     placeholder?: string;
+    mask?: string;
   }
 
   const formFields: FormInputI[] = [
@@ -48,10 +49,12 @@ function ContactUsPage() {
       placeholder: 'leo@gmail.com'
     },
     {
+      as: 'mobile',
       name: 'mobile',
       type: 'text',
-      isRequired: false,
-      placeholder: '2679771310'
+      isRequired: true,
+      placeholder: '2679771310',
+      mask: '999-999-9999'
     },
     {
       as: 'textarea',
@@ -108,7 +111,9 @@ function ContactUsPage() {
                   .max(20, 'Name should be less than 20 characters')
                   .required('Name is required'),
                 email: Yup.string().email('Invalid Email').required('Email is required'),
-                mobile: Yup.string().matches(/^\d{10}$/, 'Invalid Mobile'),
+                mobile: Yup.string()
+                  .matches(/^\d{3}-\d{3}-\d{4}$/, 'Invalid Mobile')
+                  .required('Mobile is required'),
                 message: Yup.string()
                   .min(2, 'Message should be more than 1 character')
                   .max(500, 'Message should be less than 500 characters')
@@ -119,18 +124,21 @@ function ContactUsPage() {
               {({ errors, touched }) => (
                 <Form className="section-inner-gap w-full xl:w-1/2">
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                    {formFields.map(({ as, name, type, isRequired, placeholder }: FormInputI) => (
-                      <FormInput
-                        key={`input_${name}`}
-                        as={as}
-                        name={name}
-                        type={type}
-                        isRequired={isRequired}
-                        placeholder={placeholder}
-                        error={errors[name]}
-                        touched={touched[name]}
-                      />
-                    ))}
+                    {formFields.map(
+                      ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
+                        <FormInput
+                          key={`input_${name}`}
+                          as={as}
+                          name={name}
+                          type={type}
+                          isRequired={isRequired}
+                          placeholder={placeholder}
+                          error={errors[name]}
+                          touched={touched[name]}
+                          mask={mask}
+                        />
+                      )
+                    )}
                   </div>
                   <ButtonPaw
                     type="Primary_Blue"

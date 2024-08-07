@@ -26,20 +26,22 @@ function BookNowPage() {
     mobile: string;
     message: string;
     contact: string;
-    street: string;
     city: string;
     state: string;
+    street: string;
     zip: string;
+    date: string;
   }
 
   interface FormInputI {
-    as?: 'input' | 'textarea' | 'select';
+    as?: 'input' | 'textarea' | 'select' | 'mobile' | 'date';
     name: keyof ValuesI;
     label?: string;
     type: 'text' | 'email' | 'textarea';
     isRequired: boolean;
     placeholder?: string;
     options?: string[];
+    mask?: string;
   }
 
   const formFields: FormInputI[] = [
@@ -56,10 +58,12 @@ function BookNowPage() {
       placeholder: 'leo@gmail.com'
     },
     {
+      as: 'mobile',
       name: 'mobile',
       type: 'text',
-      isRequired: false,
-      placeholder: '2679771310'
+      isRequired: true,
+      placeholder: '2679771310',
+      mask: '999-999-9999'
     },
     {
       as: 'textarea',
@@ -75,12 +79,6 @@ function BookNowPage() {
       isRequired: false
     },
     {
-      name: 'street',
-      type: 'text',
-      isRequired: true,
-      placeholder: '11811 Double Trouble Rd'
-    },
-    {
       name: 'city',
       type: 'text',
       isRequired: true,
@@ -94,9 +92,22 @@ function BookNowPage() {
       options: ['PA', 'NJ', 'DE', 'NY']
     },
     {
+      name: 'street',
+      type: 'text',
+      isRequired: true,
+      placeholder: '11811 Double Trouble Rd'
+    },
+    {
       name: 'zip',
       type: 'text',
       isRequired: true
+    },
+    {
+      as: 'date',
+      name: 'date',
+      type: 'text',
+      isRequired: true,
+      placeholder: '01/01/2024'
     }
   ];
 
@@ -143,10 +154,11 @@ function BookNowPage() {
                 mobile: '',
                 message: '',
                 contact: '',
-                street: '',
                 city: 'Philadelphia',
                 state: 'PA',
-                zip: ''
+                street: '',
+                zip: '',
+                date: ''
               }}
               validationSchema={Yup.object().shape({
                 name: Yup.string()
@@ -154,17 +166,20 @@ function BookNowPage() {
                   .max(20, 'Name should be less than 20 characters')
                   .required('Name is required'),
                 email: Yup.string().email('Invalid Email').required('Email is required'),
-                mobile: Yup.string().matches(/^\d{10}$/, 'Invalid Mobile'),
+                mobile: Yup.string()
+                  .matches(/^\d{3}-\d{3}-\d{4}$/, 'Invalid Mobile')
+                  .required('Mobile is required'),
                 message: Yup.string()
                   .min(2, 'Message should be more than 1 character')
                   .max(500, 'Message should be less than 500 characters'),
                 contact: Yup.string().max(30),
-                street: Yup.string().max(30).required('Street is required'),
                 city: Yup.string().max(15).required('City is required'),
                 state: Yup.string().required('State is required'),
+                street: Yup.string().max(30).required('Street is required'),
                 zip: Yup.string()
                   .matches(/^\d{5}$/, 'Invalid Zip')
-                  .required('Zip is required')
+                  .required('Zip is required'),
+                date: Yup.string().required('Date is required')
               })}
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
@@ -172,7 +187,16 @@ function BookNowPage() {
                 <Form className="section-inner-gap w-full xl:w-1/2">
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
-                      ({ as, name, label, type, isRequired, placeholder, options }: FormInputI) => (
+                      ({
+                        as,
+                        name,
+                        label,
+                        type,
+                        isRequired,
+                        placeholder,
+                        options,
+                        mask
+                      }: FormInputI) => (
                         <Fragment key={`input_${name}`}>
                           <FormInput
                             key={`input_${name}`}
@@ -185,8 +209,9 @@ function BookNowPage() {
                             error={errors[name]}
                             touched={touched[name]}
                             options={options}
+                            mask={mask}
                           />
-                          {name === 'street' && (
+                          {name === 'contact' && (
                             <p className="font-calistoga-regular text-32 mt-32">
                               Address where the <span className="text-sky-500">groom</span> will
                               take place...
