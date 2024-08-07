@@ -62,6 +62,10 @@ export function Main({ children }: MainPropsI) {
     },
     links: [
       {
+        label: 'Home',
+        url: '/'
+      },
+      {
         label: 'Our Services',
         url: '/our-services/'
       },
