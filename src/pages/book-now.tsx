@@ -2,16 +2,16 @@ import React from 'react';
 import { Fragment } from 'react';
 
 import { Main } from 'components/layouts/Main';
+import { Wave } from 'components/general/Wave';
+import { SectionHeader } from 'components/general/SectionHeader';
+import { FormInput } from 'components/general/FormInput';
+import { ButtonPaw } from 'components/general/Button';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
-
-import { SectionHeader } from 'components/general/SectionHeader';
-import { FormInput } from 'components/general/FormInput';
-import { Button } from 'components/general/Button';
 
 function BookNowPage() {
   const DATA = {
@@ -53,13 +53,13 @@ function BookNowPage() {
       name: 'email',
       type: 'email',
       isRequired: true,
-      placeholder: 'leo.dob@gm.co'
+      placeholder: 'leo@gmail.com'
     },
     {
       name: 'mobile',
       type: 'text',
       isRequired: false,
-      placeholder: '2159877259'
+      placeholder: '2679771310'
     },
     {
       as: 'textarea',
@@ -111,92 +111,91 @@ function BookNowPage() {
     console.log(JSON.stringify(values));
 
     if (response.ok) {
+      alert('Message sent!');
       actions.resetForm();
       navigate('/');
-      alert('Message sent!');
     } else {
-      actions.resetForm();
       alert('Failed to send message.');
+      actions.resetForm();
     }
   };
 
   return (
     <Main>
-      <>
-        <PlaybarSection />
+      <PlaybarSection />
 
-        <div className="section-gap">
-          <div className="container">
-            <div className="section-inner-gap">
-              <SectionHeader
-                icon={DATA.icon}
-                title={DATA.title.replace(
-                  'appointment',
-                  `<span class="text-sky-500">appointment</span>`
-                )}
-                paragraph={DATA.paragraph}
-              />
+      <Wave>
+        <div className="container">
+          <div className="section-inner-gap">
+            <SectionHeader
+              icon={DATA.icon}
+              title={DATA.title.replace(
+                'appointment',
+                `<span class="text-sky-500">appointment</span>`
+              )}
+              paragraph={DATA.paragraph}
+            />
 
-              <Formik
-                initialValues={{
-                  name: '',
-                  email: '',
-                  mobile: '',
-                  message: '',
-                  contact: '',
-                  street: '',
-                  city: 'Philadelphia',
-                  state: 'PA',
-                  zip: ''
-                }}
-                validationSchema={Yup.object().shape({
-                  name: Yup.string()
-                    .min(2, 'Name should be more than 1 character')
-                    .max(20, 'Name should be less than 20 characters')
-                    .required('Name is required'),
-                  email: Yup.string().email('Invalid Email').required('Email is required'),
-                  mobile: Yup.string().matches(/^\d{10}$/, 'Invalid Mobile'),
-                  message: Yup.string()
-                    .min(2, 'Message should be more than 1 character')
-                    .max(500, 'Message should be less than 500 characters'),
-                  contact: Yup.string().max(30),
-                  street: Yup.string().max(30).required('Street is required'),
-                  city: Yup.string().max(15).required('City is required'),
-                  state: Yup.string().required('State is required'),
-                  zip: Yup.string()
-                    .matches(/^\d{5}$/, 'Invalid Zip')
-                    .required('Zip is required')
-                })}
-                onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
-              >
-                {({ errors, touched }) => (
-                  <Form className="section-inner-gap w-full xl:w-1/2">
-                    <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                      {formFields.map(
-                        ({
-                          as,
-                          name,
-                          label,
-                          type,
-                          isRequired,
-                          placeholder,
-                          options
-                        }: FormInputI) => (
-                          <Fragment key={`input_${name}`}>
-                            <FormInput
-                              key={`input_${name}`}
-                              as={as}
-                              name={name}
-                              label={label}
-                              type={type}
-                              isRequired={isRequired}
-                              placeholder={placeholder}
-                              error={errors[name]}
-                              touched={touched[name]}
-                              options={options}
-                            />
-                            {name === 'street' && (
-                              <p className="font-calistoga-regular text-32 mt-32">
+            <Formik
+              initialValues={{
+                name: '',
+                email: '',
+                mobile: '',
+                message: '',
+                contact: '',
+                street: '',
+                city: 'Philadelphia',
+                state: 'PA',
+                zip: ''
+              }}
+              validationSchema={Yup.object().shape({
+                name: Yup.string()
+                  .min(2, 'Name should be more than 1 character')
+                  .max(20, 'Name should be less than 20 characters')
+                  .required('Name is required'),
+                email: Yup.string().email('Invalid Email').required('Email is required'),
+                mobile: Yup.string().matches(/^\d{10}$/, 'Invalid Mobile'),
+                message: Yup.string()
+                  .min(2, 'Message should be more than 1 character')
+                  .max(500, 'Message should be less than 500 characters'),
+                contact: Yup.string().max(30),
+                street: Yup.string().max(30).required('Street is required'),
+                city: Yup.string().max(15).required('City is required'),
+                state: Yup.string().required('State is required'),
+                zip: Yup.string()
+                  .matches(/^\d{5}$/, 'Invalid Zip')
+                  .required('Zip is required')
+              })}
+              onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
+            >
+              {({ errors, touched }) => (
+                <Form className="section-inner-gap w-full xl:w-1/2">
+                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                    {formFields.map(
+                      ({ as, name, label, type, isRequired, placeholder, options }: FormInputI) => (
+                        <Fragment key={`input_${name}`}>
+                          <FormInput
+                            key={`input_${name}`}
+                            as={as}
+                            name={name}
+                            label={label}
+                            type={type}
+                            isRequired={isRequired}
+                            placeholder={placeholder}
+                            error={errors[name]}
+                            touched={touched[name]}
+                            options={options}
+                          />
+                          {name === 'street' && (
+                            <p className="font-calistoga-regular text-32 mt-32">
+                              Address where the <span className="text-sky-500">groom</span> will
+                              take place...
+                            </p>
+                          )}
+                        </Fragment>
+                      )
+                    )}
+                  </div>
                   <ButtonPaw
                     type="Primary_Blue"
                     aType="submit"
@@ -204,20 +203,11 @@ function BookNowPage() {
                     icon="icon-general_arrow"
                   />
                 </Form>
-                    </div>
-                    <Button
-                      type="Primary_Blue"
-                      aType="submit"
-                      label="Send my Message"
-                      icon="icon-general_arrow"
-                    />
-                  </Form>
-                )}
-              </Formik>
-            </div>
+              )}
+            </Formik>
           </div>
         </div>
-      </>
+      </Wave>
     </Main>
   );
 }

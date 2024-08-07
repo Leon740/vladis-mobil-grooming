@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { Main } from 'components/layouts/Main';
+import { Wave } from 'components/general/Wave';
+import { SectionHeader } from 'components/general/SectionHeader';
+import { FormInput } from 'components/general/FormInput';
+import { ButtonPaw } from 'components/general/Button';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
-
-import { SectionHeader } from 'components/general/SectionHeader';
-import { FormInput } from 'components/general/FormInput';
-import { Button } from 'components/general/Button';
 
 function ContactUsPage() {
   const DATA = {
@@ -45,13 +45,13 @@ function ContactUsPage() {
       name: 'email',
       type: 'email',
       isRequired: true,
-      placeholder: 'leo.dob@gm.co'
+      placeholder: 'leo@gmail.com'
     },
     {
       name: 'mobile',
       type: 'text',
       isRequired: false,
-      placeholder: '2159877259'
+      placeholder: '2679771310'
     },
     {
       as: 'textarea',
@@ -73,65 +73,64 @@ function ContactUsPage() {
     console.log(JSON.stringify(values));
 
     if (response.ok) {
+      alert('Message sent!');
       actions.resetForm();
       navigate('/');
-      alert('Message sent!');
     } else {
-      actions.resetForm();
       alert('Failed to send message.');
+      actions.resetForm();
     }
   };
 
   return (
     <Main>
-      <>
-        <PlaybarSection />
+      <PlaybarSection />
 
-        <div className="section-gap">
-          <div className="container">
-            <div className="section-inner-gap">
-              <SectionHeader
-                icon={DATA.icon}
-                title={DATA.title.replace('Contact', `<span class="text-sky-500">Contact</span>`)}
-                paragraph={DATA.paragraph}
-              />
+      <Wave>
+        <div className="container">
+          <div className="section-inner-gap">
+            <SectionHeader
+              icon={DATA.icon}
+              title={DATA.title.replace('Contact', `<span class="text-sky-500">Contact</span>`)}
+              paragraph={DATA.paragraph}
+            />
 
-              <Formik
-                initialValues={{
-                  name: '',
-                  email: '',
-                  mobile: '',
-                  message: ''
-                }}
-                validationSchema={Yup.object().shape({
-                  name: Yup.string()
-                    .min(2, 'Name should be more than 1 character')
-                    .max(20, 'Name should be less than 20 characters')
-                    .required('Name is required'),
-                  email: Yup.string().email('Invalid Email').required('Email is required'),
-                  mobile: Yup.string().matches(/^\d{10}$/, 'Invalid Mobile'),
-                  message: Yup.string()
-                    .min(2, 'Message should be more than 1 character')
-                    .max(500, 'Message should be less than 500 characters')
-                    .required('Message is required')
-                })}
-                onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
-              >
-                {({ errors, touched }) => (
-                  <Form className="section-inner-gap w-full xl:w-1/2">
-                    <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                      {formFields.map(({ as, name, type, isRequired, placeholder }: FormInputI) => (
-                        <FormInput
-                          key={`input_${name}`}
-                          as={as}
-                          name={name}
-                          type={type}
-                          isRequired={isRequired}
-                          placeholder={placeholder}
-                          error={errors[name]}
-                          touched={touched[name]}
-                        />
-                      ))}
+            <Formik
+              initialValues={{
+                name: '',
+                email: '',
+                mobile: '',
+                message: ''
+              }}
+              validationSchema={Yup.object().shape({
+                name: Yup.string()
+                  .min(2, 'Name should be more than 1 character')
+                  .max(20, 'Name should be less than 20 characters')
+                  .required('Name is required'),
+                email: Yup.string().email('Invalid Email').required('Email is required'),
+                mobile: Yup.string().matches(/^\d{10}$/, 'Invalid Mobile'),
+                message: Yup.string()
+                  .min(2, 'Message should be more than 1 character')
+                  .max(500, 'Message should be less than 500 characters')
+                  .required('Message is required')
+              })}
+              onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
+            >
+              {({ errors, touched }) => (
+                <Form className="section-inner-gap w-full xl:w-1/2">
+                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                    {formFields.map(({ as, name, type, isRequired, placeholder }: FormInputI) => (
+                      <FormInput
+                        key={`input_${name}`}
+                        as={as}
+                        name={name}
+                        type={type}
+                        isRequired={isRequired}
+                        placeholder={placeholder}
+                        error={errors[name]}
+                        touched={touched[name]}
+                      />
+                    ))}
                   </div>
                   <ButtonPaw
                     type="Primary_Blue"
@@ -139,13 +138,12 @@ function ContactUsPage() {
                     label="Send my Message"
                     icon="icon-general_arrow"
                   />
-                  </Form>
-                )}
-              </Formik>
-            </div>
+                </Form>
+              )}
+            </Formik>
           </div>
         </div>
-      </>
+      </Wave>
     </Main>
   );
 }
