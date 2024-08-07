@@ -62,7 +62,7 @@ function BookNowPage() {
       name: 'mobile',
       type: 'text',
       isRequired: true,
-      placeholder: '2679771310',
+      placeholder: '267-977-1310',
       mask: '999-999-9999'
     },
     {
