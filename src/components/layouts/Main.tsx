@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import 'assets/scss/index.scss';
 
 import { ReactNode } from 'react';
@@ -161,32 +161,34 @@ export function Main({ children }: MainPropsI) {
   // const DATA: DATAI = useStaticQuery(query).strapiMain;
 
   return (
-    <ErrorBoundary>
-      <Loader logo={DATA.logo}>
-        <Helmet>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>{DATA.title}</title>
-          <meta name="description" content={DATA.description} />
-          <meta name="keywords" content={DATA.keywords} />
-          <meta name="robots" content="index, follow" />
-          <link rel="canonical" href={DATA.url} />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content={DATA.title} />
-          <meta property="og:description" content={DATA.description} />
-          <meta property="og:image" content={DATA.ogImageUrl} />
-          <meta property="og:url" content={DATA.url} />
-        </Helmet>
-        <Header data={{ logo: DATA.logo, links: DATA.links }} />
-        {children}
-        <Footer
-          data={{
-            img: DATA.img,
-            contacts: DATA.contacts,
-            copyright: DATA.copyright
-          }}
-        />
-      </Loader>
-    </ErrorBoundary>
+    <StrictMode>
+      <ErrorBoundary>
+        <Loader logo={DATA.logo}>
+          <Helmet>
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>{DATA.title}</title>
+            <meta name="description" content={DATA.description} />
+            <meta name="keywords" content={DATA.keywords} />
+            <meta name="robots" content="index, follow" />
+            <link rel="canonical" href={DATA.url} />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content={DATA.title} />
+            <meta property="og:description" content={DATA.description} />
+            <meta property="og:image" content={DATA.ogImageUrl} />
+            <meta property="og:url" content={DATA.url} />
+          </Helmet>
+          <Header data={{ logo: DATA.logo, links: DATA.links }} />
+          {children}
+          <Footer
+            data={{
+              img: DATA.img,
+              contacts: DATA.contacts,
+              copyright: DATA.copyright
+            }}
+          />
+        </Loader>
+      </ErrorBoundary>
+    </StrictMode>
   );
 }
