@@ -197,13 +197,13 @@ function BookNowPage() {
                             />
                             {name === 'street' && (
                               <p className="font-calistoga-regular text-32 mt-32">
-                                Address where the <span className="text-sky-500">groom</span> will
-                                take place...
-                              </p>
-                            )}
-                          </Fragment>
-                        )
-                      )}
+                  <ButtonPaw
+                    type="Primary_Blue"
+                    aType="submit"
+                    label="Send my Message"
+                    icon="icon-general_arrow"
+                  />
+                </Form>
                     </div>
                     <Button
                       type="Primary_Blue"

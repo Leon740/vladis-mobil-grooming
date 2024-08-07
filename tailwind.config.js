@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    `./src/pages/**/*.{js,jsx,ts,tsx}`,
-    `./src/components/**/*.{js,jsx,ts,tsx}`,
-  ],
+  content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, `./src/components/**/*.{js,jsx,ts,tsx}`],
   theme: {
     container: {
       center: true,
@@ -45,7 +42,10 @@ module.exports = {
       16: '16px',
       32: '32px'
     },
+    rotate: {
+      16: '16deg'
+    },
     extend: {}
   },
-  plugins: [],
-}
+  plugins: []
+};

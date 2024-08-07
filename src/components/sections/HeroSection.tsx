@@ -3,7 +3,7 @@ import React from 'react';
 // import { graphql, useStaticQuery } from 'gatsby';
 
 import { Img } from 'components/general/Img';
-import { Button } from 'components/general/Button';
+import { ButtonPaw } from 'components/general/Button';
 import { SectionHeader } from 'components/general/SectionHeader';
 
 export function HeroSection() {
@@ -52,12 +52,12 @@ export function HeroSection() {
         <div className="section-inner-gap xl:flex-row xl:items-center xl:justify-between">
           <div className="flex flex-col gap-32">
             <SectionHeader as="h1" title={DATA.title} paragraph={DATA.paragraph} />
-            <Button
+            <ButtonPaw
               type="Primary_Blue"
               href={DATA.buttonUrl}
               label={DATA.buttonLabel}
               icon="icon-contacts_phone"
-              iconClassName="-order-1 text-20"
+              iconClassName="-order-1"
             />
           </div>
 

@@ -132,13 +132,13 @@ function ContactUsPage() {
                           touched={touched[name]}
                         />
                       ))}
-                    </div>
-                    <Button
-                      type="Primary_Blue"
-                      aType="submit"
-                      label="Send my Message"
-                      icon="icon-general_arrow"
-                    />
+                  </div>
+                  <ButtonPaw
+                    type="Primary_Blue"
+                    aType="submit"
+                    label="Send my Message"
+                    icon="icon-general_arrow"
+                  />
                   </Form>
                 )}
               </Formik>
