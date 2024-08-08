@@ -3,4 +3,4 @@ node_modules/
 public
 src/gatsby-types.d.ts
 .DS_store
-.DS_Store
+**/.DS_Store
