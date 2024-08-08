@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Main } from 'components/layouts/Main';
+import { Wave } from 'components/general/Wave';
 import { Button } from 'components/general/Button';
 import { SectionHeader } from 'components/general/SectionHeader';
 
@@ -27,7 +28,7 @@ function NotFoundPage({ title }: NotFoundPagePropsI) {
 
   return (
     <Main>
-      <div className="section-gap">
+      <Wave>
         <div className="container">
           <div className="section-inner-gap justify-center text-center">
             <SectionHeader icon="icon-sections_404" as="h1" title={title || DATA.title} />
@@ -45,7 +46,7 @@ function NotFoundPage({ title }: NotFoundPagePropsI) {
             </nav>
           </div>
         </div>
-      </div>
+      </Wave>
     </Main>
   );
 }
