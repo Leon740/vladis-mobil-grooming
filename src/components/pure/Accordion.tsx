@@ -69,7 +69,7 @@ export function AccordionItem({ id, render }: AccordionItemPropsI) {
 
   return (
     <AccordionItemContext.Provider value={{ id, isActive }}>
-      <li>{render(isActive)}</li>
+      {render(isActive)}
     </AccordionItemContext.Provider>
   );
 }
@@ -83,7 +83,7 @@ export function Accordion({ defaultActiveId, children }: AccordionPropsI) {
 
   return (
     <AccordionContext.Provider value={{ activeId, setActiveId }}>
-      <ul>{children}</ul>
+      {children}
     </AccordionContext.Provider>
   );
 }
@@ -119,24 +119,22 @@ export function AccordionConsumer() {
 
   return (
     <Accordion>
-      <>
-        {DATA.map(({ header, body }: AccordionItemI, index) => (
-          <AccordionItem
-            key={index}
-            id={index}
-            render={(isActive) => (
-              <>
-                <AccordionHeader>
-                  <span className={`${isActive ? 'text-red-500' : ''}`}>{header}</span>
-                </AccordionHeader>
-                <AccordionBody>
-                  <span className="">{body}</span>
-                </AccordionBody>
-              </>
-            )}
-          />
-        ))}
-      </>
+      {DATA.map(({ header, body }: AccordionItemI, index) => (
+        <AccordionItem
+          key={index}
+          id={index}
+          render={(isActive) => (
+            <>
+              <AccordionHeader>
+                <span className={`${isActive ? 'text-red-500' : ''}`}>{header}</span>
+              </AccordionHeader>
+              <AccordionBody>
+                <span className="">{body}</span>
+              </AccordionBody>
+            </>
+          )}
+        />
+      ))}
     </Accordion>
   );
 }

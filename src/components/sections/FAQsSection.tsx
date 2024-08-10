@@ -169,7 +169,7 @@ export function FAQsSection({ displayAllFaqs = false }: FAQsSectionPropsI) {
                 key={`faq_${faqIndex}`}
                 id={faqIndex}
                 render={(isActive) => (
-                  <div className="rounded-16 bg-white">
+                  <li className="rounded-16 bg-white">
                     <AccordionHeader>
                       <div
                         className={`p-32 w-full flex flex-row items-center justify-between transition-all hover:text-sky-500 ${
@@ -190,7 +190,7 @@ export function FAQsSection({ displayAllFaqs = false }: FAQsSectionPropsI) {
                         <Paragraph paragraph={paragraph} />
                       </div>
                     </AccordionBody>
-                  </div>
+                  </li>
                 )}
               />
             ))}

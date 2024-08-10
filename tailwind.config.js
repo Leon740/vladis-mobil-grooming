@@ -43,7 +43,8 @@ module.exports = {
       32: '32px'
     },
     rotate: {
-      16: '16deg'
+      16: '16deg',
+      90: '90deg'
     },
     extend: {}
   },

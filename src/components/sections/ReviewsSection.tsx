@@ -201,9 +201,9 @@ export function ReviewsSection() {
                           className="w-128"
                         />
                       </div>
-                      <h4 id={`review_title_${reviewIndex}`} className="text-ss3-20-bold">
+                      <h3 id={`review_title_${reviewIndex}`} className="text-ss3-20-bold">
                         &quot;{title}&quot;
-                      </h4>
+                      </h3>
                       <p className="text-ss3-20-regular">{paragraph}</p>
                     </section>
                     <span className="text-cali-16">- {author}</span>
