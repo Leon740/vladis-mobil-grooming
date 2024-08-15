@@ -106,21 +106,21 @@ export function Main({ children }: MainPropsI) {
         imgUrl:
           'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_email.svg',
         imgAlt: 'Vladis Mobil Grooming & Spa Email',
-        url: 'mailto:vladis.mobile.grooming.spa@gmail.com',
-        label: 'vladis.mobile.grooming.spa@gmail.com'
+        url: 'mailto:vladismobilegrooming@gmail.com',
+        label: 'vladismobilegrooming@gmail.com'
       },
       {
         imgUrl:
           'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_instagram.svg',
         imgAlt: 'Vladis Mobil Grooming & Spa Instagram',
-        url: 'instagram.com',
+        url: 'https://www.instagram.com/',
         label: 'vladis.mobile.grooming.spa'
       },
       {
         imgUrl:
           'https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/contacts/contacts_facebook.svg',
         imgAlt: 'Vladis Mobil Grooming & Spa Facebook',
-        url: 'facebook.com',
+        url: 'https://www.facebook.com/profile.php?id=61564306883683',
         label: 'vladis.mobile.grooming.spa'
       }
     ],
