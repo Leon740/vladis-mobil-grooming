@@ -26,9 +26,9 @@ function BookNowPage() {
     mobile: string;
     message: string;
     contact: string;
+    street: string;
     city: string;
     state: string;
-    street: string;
     zip: string;
     date: string;
   }
@@ -79,6 +79,12 @@ function BookNowPage() {
       isRequired: false
     },
     {
+      name: 'street',
+      type: 'text',
+      isRequired: true,
+      placeholder: '11811 Double Trouble Rd'
+    },
+    {
       name: 'city',
       type: 'text',
       isRequired: true,
@@ -90,12 +96,6 @@ function BookNowPage() {
       type: 'text',
       isRequired: true,
       options: ['PA', 'NJ', 'DE', 'NY']
-    },
-    {
-      name: 'street',
-      type: 'text',
-      isRequired: true,
-      placeholder: '11811 Double Trouble Rd'
     },
     {
       name: 'zip',
@@ -154,9 +154,9 @@ function BookNowPage() {
                 mobile: '',
                 message: '',
                 contact: '',
+                street: '',
                 city: 'Philadelphia',
                 state: 'PA',
-                street: '',
                 zip: '',
                 date: ''
               }}
@@ -173,9 +173,9 @@ function BookNowPage() {
                   .min(2, 'Message should be more than 1 character')
                   .max(500, 'Message should be less than 500 characters'),
                 contact: Yup.string().max(30),
+                street: Yup.string().max(30).required('Street is required'),
                 city: Yup.string().max(15).required('City is required'),
                 state: Yup.string().required('State is required'),
-                street: Yup.string().max(30).required('Street is required'),
                 zip: Yup.string()
                   .matches(/^\d{5}$/, 'Invalid Zip')
                   .required('Zip is required'),
