@@ -7,7 +7,7 @@ import { FormInput } from 'components/general/FormInput';
 import { ButtonPaw } from 'components/general/Button';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 
-import { Formik, Form } from 'formik';
+import { Formik, Form, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
@@ -65,7 +65,7 @@ function ContactUsPage() {
     }
   ];
 
-  const handleSubmitFn = async (values: ValuesI, actions) => {
+  const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
     const response = await fetch('https://formspree.io/f/mldrdawb', {
       method: 'POST',
       headers: {

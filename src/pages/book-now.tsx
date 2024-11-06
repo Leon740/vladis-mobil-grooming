@@ -8,7 +8,7 @@ import { FormInput } from 'components/general/FormInput';
 import { ButtonPaw } from 'components/general/Button';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 
-import { Formik, Form } from 'formik';
+import { Formik, Form, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
@@ -100,7 +100,8 @@ function BookNowPage() {
     {
       name: 'zip',
       type: 'text',
-      isRequired: true
+      isRequired: true,
+      placeholder: '19116'
     },
     {
       as: 'date',
@@ -111,7 +112,7 @@ function BookNowPage() {
     }
   ];
 
-  const handleSubmitFn = async (values: ValuesI, actions) => {
+  const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
     const response = await fetch('https://formspree.io/f/mpwawkjk', {
       method: 'POST',
       headers: {
@@ -197,7 +198,7 @@ function BookNowPage() {
                         options,
                         mask
                       }: FormInputI) => (
-                        <Fragment key={`input_${name}`}>
+                        <div key={`input_${name}`}>
                           <FormInput
                             key={`input_${name}`}
                             as={as}
@@ -217,7 +218,7 @@ function BookNowPage() {
                               take place...
                             </p>
                           )}
-                        </Fragment>
+                        </div>
                       )
                     )}
                   </div>
