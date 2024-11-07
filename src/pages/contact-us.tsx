@@ -94,6 +94,13 @@ function ContactUsPage() {
     <Main>
       <PlaybarSection />
 
+      <form name="contact-test" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact-test" />
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <button type="submit">Submit</button>
+      </form>
+
       <Wave>
         <div className="container">
           <div className="section-inner-gap">
