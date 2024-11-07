@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { Wave } from 'components/general/Wave';
@@ -65,7 +65,11 @@ function ContactUsPage() {
     }
   ];
 
+  const hiddenFormRf = useRef<HTMLFormElement>(null);
+
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
+    console.log(hiddenFormRf.current?.submit());
+
     try {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
@@ -129,24 +133,18 @@ function ContactUsPage() {
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
               {({ values, errors, touched }) => (
-                <>
-                  <form name="contact" method="POST" data-netlify="true">
+                <div>
+                  <form name="contact" method="POST" data-netlify="true" ref={hiddenFormRf}>
                     <input type="hidden" name="form-name" value="contact" />
 
-                    <input type="text" name="name" value={values.name} />
-                    <input type="email" name="email" value={values.email} />
-                    <input type="text" name="mobile" value={values.mobile} />
-                    <textarea name="message" value={values.message}></textarea>
+                    {formFields.map(({ name }) => (
+                      <input name={name} value={values[name]} readOnly />
+                    ))}
+
                     <button type="submit">submit</button>
                   </form>
-                  <Form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    className="section-inner-gap w-full xl:w-1/2"
-                  >
-                    <input type="hidden" name="form-name" value="contact" />
 
+                  <Form className="section-inner-gap w-full xl:w-1/2">
                     <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                       {formFields.map(
                         ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
@@ -171,21 +169,12 @@ function ContactUsPage() {
                       icon="icon-general_arrow"
                     />
                   </Form>
-                </>
+                </div>
               )}
             </Formik>
           </div>
         </div>
       </Wave>
-      <div>
-        <h1>Test Form Page</h1>
-        <form name="contact-test" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact-test" />
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
     </Main>
   );
 }
