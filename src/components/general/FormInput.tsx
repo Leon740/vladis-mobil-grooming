@@ -12,6 +12,8 @@ interface FormInputPropsI {
   type: 'text' | 'email' | 'textarea';
   isRequired: boolean;
   placeholder?: string;
+  value: string;
+  onChange: () => void;
   error?: string;
   touched?: boolean;
   options?: string[];
@@ -25,6 +27,8 @@ export function FormInput({
   type,
   isRequired,
   placeholder,
+  value,
+  onChange,
   error,
   touched,
   options,
@@ -64,6 +68,8 @@ export function FormInput({
           placeholder={placeholder}
           aria-label={`${name} input`}
           className={className}
+          value={value}
+          onChange={onChange}
         />
         // <Field name={name}>
         //   {({ field }: FieldProps) => (
@@ -108,6 +114,8 @@ export function FormInput({
         <textarea
           id={name}
           name={name}
+          value={value}
+          onChange={onChange}
           placeholder={placeholder}
           aria-label={`${name} input`}
           className={className}
@@ -120,6 +128,8 @@ export function FormInput({
           id={name}
           name={name}
           type={type}
+          value={value}
+          onChange={onChange}
           placeholder={placeholder}
           aria-label={`${name} input`}
           className={className}
