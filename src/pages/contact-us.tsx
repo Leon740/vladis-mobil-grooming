@@ -129,7 +129,7 @@ function ContactUsPage() {
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
               {({ errors, touched }) => (
-                <Form
+                <form
                   name="app"
                   method="POST"
                   data-netlify="true"
@@ -160,7 +160,7 @@ function ContactUsPage() {
                     label="Send my Message"
                     icon="icon-general_arrow"
                   />
-                </Form>
+                </form>
               )}
             </Formik>
           </div>
