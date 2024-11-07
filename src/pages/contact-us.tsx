@@ -7,7 +7,7 @@ import { FormInput } from 'components/general/FormInput';
 import { ButtonPaw } from 'components/general/Button';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 
-import { Formik, Form, FormikHelpers } from 'formik';
+import { Formik, Form, FormikHelpers, useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
@@ -65,36 +65,56 @@ function ContactUsPage() {
     }
   ];
 
-  const hiddenFormRf = useRef<HTMLFormElement>(null);
+  const formik = useFormik<ValuesI>({
+    initialValues: {
+      name: '',
+      email: '',
+      mobile: '',
+      message: ''
+    },
+    validationSchema: Yup.object().shape({
+      name: Yup.string()
+        .min(2, 'Name should be more than 1 character')
+        .max(20, 'Name should be less than 20 characters')
+        .required('Name is required'),
+      email: Yup.string().email('Invalid Email').required('Email is required'),
+      mobile: Yup.string()
+        .matches(/^\d{3}-\d{3}-\d{4}$/, 'Invalid Mobile')
+        .required('Mobile is required'),
+      message: Yup.string()
+        .min(2, 'Message should be more than 1 character')
+        .max(500, 'Message should be less than 500 characters')
+        .required('Message is required')
+    }),
+    onSubmit: async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
+      // hiddenFormRf.current?.submit();
 
-  const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
-    hiddenFormRf.current?.submit();
+      try {
+        const formData = new FormData();
+        Object.entries(values).forEach(([key, value]) => {
+          formData.append(key, value);
+        });
+        formData.append('form-name', 'contact');
 
-    try {
-      const formData = new FormData();
-      Object.entries(values).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-      formData.append('form-name', 'contact');
+        const response = await fetch('/', {
+          method: 'POST',
+          body: formData
+        });
+        console.log(response);
+        console.log(formData);
 
-      const response = await fetch('/', {
-        method: 'POST',
-        body: formData
-      });
-      console.log(response);
-      console.log(formData);
-
-      if (response.ok) {
-        alert('Message sent!');
-        actions.resetForm();
-        window.location.href = '/';
-      } else {
-        alert('Failed to send message.');
+        if (response.ok) {
+          alert('Message sent!');
+          actions.resetForm();
+          window.location.href = '/';
+        } else {
+          alert('Failed to send message.');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
       }
-    } catch (error) {
-      console.error('Form submission error:', error);
     }
-  };
+  });
 
   return (
     <Main>
@@ -109,7 +129,7 @@ function ContactUsPage() {
               paragraph={DATA.paragraph}
             />
 
-            <form name="test" method="POST" data-netlify="true" ref={hiddenFormRf}>
+            <form name="test" method="POST" data-netlify="true">
               <input type="hidden" name="form-name" value="test" />
 
               {/* {formFields.map(({ name }) => (
@@ -123,57 +143,29 @@ function ContactUsPage() {
               <button type="submit">submit</button>
             </form>
 
-            <Formik
-              initialValues={{
-                name: '',
-                email: '',
-                mobile: '',
-                message: ''
-              }}
-              validationSchema={Yup.object().shape({
-                name: Yup.string()
-                  .min(2, 'Name should be more than 1 character')
-                  .max(20, 'Name should be less than 20 characters')
-                  .required('Name is required'),
-                email: Yup.string().email('Invalid Email').required('Email is required'),
-                mobile: Yup.string()
-                  .matches(/^\d{3}-\d{3}-\d{4}$/, 'Invalid Mobile')
-                  .required('Mobile is required'),
-                message: Yup.string()
-                  .min(2, 'Message should be more than 1 character')
-                  .max(500, 'Message should be less than 500 characters')
-                  .required('Message is required')
-              })}
-              onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
-            >
-              {({ values, errors, touched }) => (
-                <Form className="section-inner-gap w-full xl:w-1/2">
-                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                    {formFields.map(
-                      ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
-                        <FormInput
-                          key={`input_${name}`}
-                          as={as}
-                          name={name}
-                          type={type}
-                          isRequired={isRequired}
-                          placeholder={placeholder}
-                          error={errors[name]}
-                          touched={touched[name]}
-                          mask={mask}
-                        />
-                      )
-                    )}
-                  </div>
-                  <ButtonPaw
-                    type="Primary_Blue"
-                    aType="submit"
-                    label="Send my Message"
-                    icon="icon-general_arrow"
+            <form onSubmit={formik.handleSubmit} className="section-inner-gap w-full xl:w-1/2">
+              <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                {formFields.map(({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
+                  <FormInput
+                    key={`input_${name}`}
+                    as={as}
+                    name={name}
+                    type={type}
+                    isRequired={isRequired}
+                    placeholder={placeholder}
+                    error={formik.errors[name]}
+                    touched={formik.touched[name]}
+                    mask={mask}
                   />
-                </Form>
-              )}
-            </Formik>
+                ))}
+              </div>
+              <ButtonPaw
+                type="Primary_Blue"
+                aType="submit"
+                label="Send my Message"
+                icon="icon-general_arrow"
+              />
+            </form>
           </div>
         </div>
       </Wave>
