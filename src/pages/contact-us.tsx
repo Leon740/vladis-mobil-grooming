@@ -143,7 +143,15 @@ function ContactUsPage() {
               <button type="submit">submit</button>
             </form>
 
-            <form onSubmit={formik.handleSubmit} className="section-inner-gap w-full xl:w-1/2">
+            <form
+              name="app"
+              method="POST"
+              data-netlify="true"
+              onSubmit={formik.handleSubmit}
+              className="section-inner-gap w-full xl:w-1/2"
+            >
+              <input type="hidden" name="form-name" value="app" />
+
               <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                 {formFields.map(({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
                   <FormInput
