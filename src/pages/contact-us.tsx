@@ -115,10 +115,10 @@ function ContactUsPage() {
               {/* {formFields.map(({ name }) => (
                 <input name={name} value={values[name]} readOnly />
               ))} */}
-              <input name="name" type="text" readOnly />
-              <input name="email" type="email" readOnly />
-              <input name="mobile" type="text" readOnly />
-              <input name="message" type="text" readOnly />
+              <input name="name" type="text" />
+              <input name="email" type="email" />
+              <input name="mobile" type="text" />
+              <input name="message" type="text" />
 
               <button type="submit">submit</button>
             </form>
