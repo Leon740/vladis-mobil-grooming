@@ -109,6 +109,20 @@ function ContactUsPage() {
               paragraph={DATA.paragraph}
             />
 
+            <form name="test" method="POST" data-netlify="true" ref={hiddenFormRf}>
+              <input type="hidden" name="form-name" value="test" />
+
+              {/* {formFields.map(({ name }) => (
+                <input name={name} value={values[name]} readOnly />
+              ))} */}
+              <input name="name" type="text" readOnly />
+              <input name="email" type="email" readOnly />
+              <input name="mobile" type="text" readOnly />
+              <input name="message" type="text" readOnly />
+
+              <button type="submit">submit</button>
+            </form>
+
             <Formik
               initialValues={{
                 name: '',
@@ -133,43 +147,31 @@ function ContactUsPage() {
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
               {({ values, errors, touched }) => (
-                <div>
-                  <form name="contact" method="POST" data-netlify="true" ref={hiddenFormRf}>
-                    <input type="hidden" name="form-name" value="contact" />
-
-                    {formFields.map(({ name }) => (
-                      <input name={name} value={values[name]} readOnly />
-                    ))}
-
-                    <button type="submit">submit</button>
-                  </form>
-
-                  <Form className="section-inner-gap w-full xl:w-1/2">
-                    <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                      {formFields.map(
-                        ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
-                          <FormInput
-                            key={`input_${name}`}
-                            as={as}
-                            name={name}
-                            type={type}
-                            isRequired={isRequired}
-                            placeholder={placeholder}
-                            error={errors[name]}
-                            touched={touched[name]}
-                            mask={mask}
-                          />
-                        )
-                      )}
-                    </div>
-                    <ButtonPaw
-                      type="Primary_Blue"
-                      aType="submit"
-                      label="Send my Message"
-                      icon="icon-general_arrow"
-                    />
-                  </Form>
-                </div>
+                <Form className="section-inner-gap w-full xl:w-1/2">
+                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                    {formFields.map(
+                      ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
+                        <FormInput
+                          key={`input_${name}`}
+                          as={as}
+                          name={name}
+                          type={type}
+                          isRequired={isRequired}
+                          placeholder={placeholder}
+                          error={errors[name]}
+                          touched={touched[name]}
+                          mask={mask}
+                        />
+                      )
+                    )}
+                  </div>
+                  <ButtonPaw
+                    type="Primary_Blue"
+                    aType="submit"
+                    label="Send my Message"
+                    icon="icon-general_arrow"
+                  />
+                </Form>
               )}
             </Formik>
           </div>
