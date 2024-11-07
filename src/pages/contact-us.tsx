@@ -71,7 +71,7 @@ function ContactUsPage() {
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      formData.append('form-name', 'app');
+      formData.append('form-name', 'contact');
 
       const response = await fetch('/', {
         method: 'POST',
@@ -105,6 +105,15 @@ function ContactUsPage() {
               paragraph={DATA.paragraph}
             />
 
+            <form name="contact" method="POST" data-netlify="true" hidden>
+              <input type="hidden" name="form-name" value="contact" />
+
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <input type="text" name="mobile" />
+              <textarea name="message"></textarea>
+            </form>
+
             <Formik
               initialValues={{
                 name: '',
@@ -129,13 +138,13 @@ function ContactUsPage() {
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
               {({ errors, touched }) => (
-                <form
-                  name="app"
+                <Form
+                  name="contact"
                   method="POST"
                   data-netlify="true"
                   className="section-inner-gap w-full xl:w-1/2"
                 >
-                  <input type="hidden" name="form-name" value="app" />
+                  <input type="hidden" name="form-name" value="contact" />
 
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
@@ -160,7 +169,7 @@ function ContactUsPage() {
                     label="Send my Message"
                     icon="icon-general_arrow"
                   />
-                </form>
+                </Form>
               )}
             </Formik>
           </div>
