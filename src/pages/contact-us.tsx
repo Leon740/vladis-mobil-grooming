@@ -105,15 +105,6 @@ function ContactUsPage() {
               paragraph={DATA.paragraph}
             />
 
-            <form name="contact" method="POST" data-netlify="true" hidden>
-              <input type="hidden" name="form-name" value="contact" />
-
-              <input type="text" name="name" />
-              <input type="email" name="email" />
-              <input type="text" name="mobile" />
-              <textarea name="message"></textarea>
-            </form>
-
             <Formik
               initialValues={{
                 name: '',
@@ -137,39 +128,50 @@ function ContactUsPage() {
               })}
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
-              {({ errors, touched }) => (
-                <Form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  className="section-inner-gap w-full xl:w-1/2"
-                >
-                  <input type="hidden" name="form-name" value="contact" />
+              {({ values, errors, touched }) => (
+                <>
+                  <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
 
-                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                    {formFields.map(
-                      ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
-                        <FormInput
-                          key={`input_${name}`}
-                          as={as}
-                          name={name}
-                          type={type}
-                          isRequired={isRequired}
-                          placeholder={placeholder}
-                          error={errors[name]}
-                          touched={touched[name]}
-                          mask={mask}
-                        />
-                      )
-                    )}
-                  </div>
-                  <ButtonPaw
-                    type="Primary_Blue"
-                    aType="submit"
-                    label="Send my Message"
-                    icon="icon-general_arrow"
-                  />
-                </Form>
+                    <input type="text" name="name" value={values.name} />
+                    <input type="email" name="email" value={values.email} />
+                    <input type="text" name="mobile" value={values.mobile} />
+                    <textarea name="message" value={values.message}></textarea>
+                    <button type="submit">submit</button>
+                  </form>
+                  <Form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    className="section-inner-gap w-full xl:w-1/2"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+
+                    <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                      {formFields.map(
+                        ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
+                          <FormInput
+                            key={`input_${name}`}
+                            as={as}
+                            name={name}
+                            type={type}
+                            isRequired={isRequired}
+                            placeholder={placeholder}
+                            error={errors[name]}
+                            touched={touched[name]}
+                            mask={mask}
+                          />
+                        )
+                      )}
+                    </div>
+                    <ButtonPaw
+                      type="Primary_Blue"
+                      aType="submit"
+                      label="Send my Message"
+                      icon="icon-general_arrow"
+                    />
+                  </Form>
+                </>
               )}
             </Formik>
           </div>
