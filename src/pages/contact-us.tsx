@@ -68,7 +68,7 @@ function ContactUsPage() {
   const hiddenFormRf = useRef<HTMLFormElement>(null);
 
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
-    console.log(hiddenFormRf.current?.submit());
+    hiddenFormRf.current?.submit();
 
     try {
       const formData = new FormData();
