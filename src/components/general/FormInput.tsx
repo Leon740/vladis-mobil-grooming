@@ -12,8 +12,6 @@ interface FormInputPropsI {
   type: 'text' | 'email' | 'textarea';
   isRequired: boolean;
   placeholder?: string;
-  value: string;
-  onChange: () => void;
   error?: string;
   touched?: boolean;
   options?: string[];
@@ -27,8 +25,6 @@ export function FormInput({
   type,
   isRequired,
   placeholder,
-  value,
-  onChange,
   error,
   touched,
   options,
@@ -62,74 +58,50 @@ export function FormInput({
       break;
     case 'mobile':
       Component = (
-        <InputMask
-          id={name}
-          mask={mask!}
-          placeholder={placeholder}
-          aria-label={`${name} input`}
-          className={className}
-          value={value}
-          onChange={onChange}
-        />
-        // <Field name={name}>
-        //   {({ field }: FieldProps) => (
-        // <InputMask
-        //   {...field}
-        //   id={name}
-        //   mask={mask!}
-        //   placeholder={placeholder}
-        //   aria-label={`${name} input`}
-        //   className={className}
-        // />
-        //   )}
-        // </Field>
+        <Field name={name}>
+          {({ field }: FieldProps) => (
+            <InputMask
+              {...field}
+              id={name}
+              mask={mask!}
+              placeholder={placeholder}
+              aria-label={`${name} input`}
+              className={className}
+            />
+          )}
+        </Field>
       );
       break;
     case 'date':
       Component = (
-        <div>t</div>
-        // <Field name={name}>
-        //   {({ field, form }: FieldProps) => (
-        //     <DatePicker
-        //       {...field}
-        //       selected={field.value ? new Date(field.value) : null}
-        //       onChange={(date) => form.setFieldValue(name, date)}
-        //       placeholderText={placeholder}
-        //       className={className}
-        //       showTimeSelect
-        //       timeIntervals={60} // Allows selection every hour
-        //       timeFormat="hh:mm aa" // Use 'hh:mm aa' for AM/PM format
-        //       dateFormat="MMMM d, yyyy, h:mm aa"
-        //       filterTime={(time) => {
-        //         const hours = time.getHours();
-        //         return hours >= 8 && hours <= 20; // Allows time from 8 AM to 8 PM
-        //       }}
-        //     />
-        //   )}
-        // </Field>
-      );
-      break;
-    case 'textarea':
-      Component = (
-        <textarea
-          id={name}
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          aria-label={`${name} input`}
-          className={className}
-        />
+        <Field name={name}>
+          {({ field, form }: FieldProps) => (
+            <DatePicker
+              {...field}
+              selected={field.value ? new Date(field.value) : null}
+              onChange={(date) => form.setFieldValue(name, date)}
+              placeholderText={placeholder}
+              className={className}
+              showTimeSelect
+              timeIntervals={60} // Allows selection every hour
+              timeFormat="hh:mm aa" // Use 'hh:mm aa' for AM/PM format
+              dateFormat="MMMM d, yyyy, h:mm aa"
+              filterTime={(time) => {
+                const hours = time.getHours();
+                return hours >= 8 && hours <= 20; // Allows time from 8 AM to 8 PM
+              }}
+            />
+          )}
+        </Field>
       );
       break;
     default:
       Component = (
-        <input
+        <Field
+          as={as}
           id={name}
           name={name}
           type={type}
-          value={value}
-          onChange={onChange}
           placeholder={placeholder}
           aria-label={`${name} input`}
           className={className}
