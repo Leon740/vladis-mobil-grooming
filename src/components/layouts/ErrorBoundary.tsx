@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NotFoundPage from 'pages/old404';
+import NotFoundPage from 'pages/404';
 import { Component, ReactNode, ErrorInfo } from 'react';
 
 interface ErrorBoundaryPropsI {
