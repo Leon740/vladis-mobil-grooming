@@ -161,6 +161,9 @@ function ContactUsPage() {
                     type={type}
                     isRequired={isRequired}
                     placeholder={placeholder}
+                    value={formik.values[name]}
+                    // @ts-ignore
+                    onChange={formik.handleChange}
                     error={formik.errors[name]}
                     touched={formik.touched[name]}
                     mask={mask}
