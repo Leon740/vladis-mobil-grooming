@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { Wave } from 'components/general/Wave';
@@ -66,23 +66,34 @@ function ContactUsPage() {
   ];
 
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
-    const response = await fetch('https://formspree.io/f/mldrdawb', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(values)
-    });
-    console.log(JSON.stringify(values));
+    try {
+      const formData = new FormData();
+      Object.entries(values).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      formData.append('form-name', 'contact');
 
-    if (response.ok) {
-      alert('Message sent!');
-      actions.resetForm();
-      navigate('/');
-    } else {
-      alert('Failed to send message.');
-      actions.resetForm();
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('Message sent!');
+        actions.resetForm();
+        window.location.href = '/';
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
     }
+  };
+
+  const hiddenFormRf = useRef<HTMLFormElement>(null);
+
+  const handleHiddenFormSubmitFn = () => {
+    hiddenFormRf.current?.submit();
   };
 
   return (
@@ -97,6 +108,23 @@ function ContactUsPage() {
               title={DATA.title.replace('Contact', `<span class="text-sky-500">Contact</span>`)}
               paragraph={DATA.paragraph}
             />
+
+            <form
+              name="app"
+              method="POST"
+              data-netlify="true"
+              ref={hiddenFormRf}
+              onSubmit={handleHiddenFormSubmitFn}
+            >
+              <input type="hidden" name="form-name" value="app" />
+
+              {formFields.map(({ name }) => (
+                <div key={name} className="flex flex-col">
+                  <label>{name}</label>
+                  <input name={name} />
+                </div>
+              ))}
+            </form>
 
             <Formik
               initialValues={{
