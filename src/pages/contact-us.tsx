@@ -71,12 +71,14 @@ function ContactUsPage() {
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      formData.append('form-name', 'con-test');
+      formData.append('form-name', 'app');
 
       const response = await fetch('/', {
         method: 'POST',
         body: formData
       });
+      console.log(response);
+      console.log(formData);
 
       if (response.ok) {
         alert('Message sent!');
@@ -93,13 +95,6 @@ function ContactUsPage() {
   return (
     <Main>
       <PlaybarSection />
-
-      <form name="contact-test" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact-test" />
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <button type="submit">Submit</button>
-      </form>
 
       <Wave>
         <div className="container">
@@ -135,14 +130,14 @@ function ContactUsPage() {
             >
               {({ errors, touched }) => (
                 <Form
-                  name="con-test"
+                  name="app"
                   method="POST"
                   data-netlify="true"
                   className="section-inner-gap w-full xl:w-1/2"
                 >
-                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                    <input type="hidden" name="form-name" value="con-test" />
+                  <input type="hidden" name="form-name" value="app" />
 
+                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
                       ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
                         <FormInput
