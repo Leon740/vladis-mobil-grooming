@@ -66,8 +66,8 @@ export function Main({ children }: MainPropsI) {
         url: '/'
       },
       {
-        label: 'Our Services',
-        url: '/our-services/'
+        label: 'Services',
+        url: '/services/'
       },
       {
         label: 'Before the Session',
@@ -82,8 +82,8 @@ export function Main({ children }: MainPropsI) {
         url: '/faqs/'
       },
       {
-        label: 'Contact Us',
-        url: '/contact-us/'
+        label: 'Contacts',
+        url: '/contacts/'
       },
       {
         label: 'Book Now',

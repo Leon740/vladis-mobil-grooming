@@ -13,17 +13,18 @@ Grooming website
 ## Pages
 
 - /index
-- /our-services/
-- /before-the-session/
-- /reviews/
-- /faqs/
-- /contact-us/
-- /book-now/
+- /services
+- /before-the-session
+- /reviews
+- /faqs
+- /contacts
+- /book-now
 
-![index](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/index.jpg 'index')
-![before-the-session](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/before-the-session.jpg 'before-the-session')
-![reviews](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/reviews.jpg 'reviews')
-![faqs](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/faqs.jpg 'faqs')
-![contact-us](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/contact-us.jpg 'contact-us')
-![book-now](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/book-now.jpg 'book-now')
-![404](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/404.jpg '404')
+![index](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/0_index.jpg 'index')
+![services](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/1_services.jpg 'services')
+![before-the-session](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/2_before-the-session.jpg 'before-the-session')
+![reviews](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/3_reviews.jpg 'reviews')
+![faqs](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/4_faqs.jpg 'faqs')
+![contacts](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/5_contacts.jpg 'contacts')
+![book-now](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/6_book-now.jpg 'book-now')
+![404](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/7_404.jpg '404')

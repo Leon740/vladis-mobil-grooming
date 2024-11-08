@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { Wave } from 'components/general/Wave';
@@ -12,7 +12,7 @@ import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
 
-function ContactUsPage() {
+function ContactsPage() {
   const DATA = {
     icon: 'icon-sections_contacts',
     title: 'Contact Us',
@@ -65,6 +65,12 @@ function ContactUsPage() {
     }
   ];
 
+  const [hiddenFormSt, setHiddenFormSt] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    message: ''
+  });
   const hiddenFormRf = useRef<HTMLFormElement>(null);
 
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
@@ -107,11 +113,15 @@ function ContactUsPage() {
               paragraph={DATA.paragraph}
             />
 
-            <form name="contact-test" method="POST" data-netlify="true">
+            <form name="contact-test" method="POST" data-netlify="true" ref={hiddenFormRf}>
               <input type="hidden" name="form-name" value="contact-test" />
-              <input type="text" name="name" placeholder="Name" />
-              <input type="email" name="email" placeholder="Email" required />
-              <button type="submit">Submit</button>
+
+              {formFields.map(({ name }) => (
+                <div key={name} className="flex flex-col">
+                  <label>{name}</label>
+                  <input name={name} value={hiddenFormSt[name]} readOnly />
+                </div>
+              ))}
             </form>
 
             <Formik
@@ -138,44 +148,38 @@ function ContactUsPage() {
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
               {({ values, errors, touched }) => (
-                <div>
-                  <form name="app" method="POST" data-netlify="true" ref={hiddenFormRf}>
-                    <input type="hidden" name="form-name" value="app" />
-
-                    {formFields.map(({ name }) => (
-                      <div key={name} className="flex flex-col">
-                        <label>{name}</label>
-                        <input name={name} value={values[name]} readOnly />
-                      </div>
-                    ))}
-                  </form>
-
-                  <Form className="section-inner-gap w-full xl:w-1/2">
-                    <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                      {formFields.map(
-                        ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
-                          <FormInput
-                            key={`input_${name}`}
-                            as={as}
-                            name={name}
-                            type={type}
-                            isRequired={isRequired}
-                            placeholder={placeholder}
-                            error={errors[name]}
-                            touched={touched[name]}
-                            mask={mask}
-                          />
-                        )
-                      )}
-                    </div>
-                    <ButtonPaw
-                      type="Primary_Blue"
-                      aType="submit"
-                      label="Send my Message"
-                      icon="icon-general_arrow"
-                    />
-                  </Form>
-                </div>
+                <Form className="section-inner-gap w-full xl:w-1/2">
+                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                    {formFields.map(
+                      ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
+                        <FormInput
+                          key={`input_${name}`}
+                          as={as}
+                          name={name}
+                          type={type}
+                          isRequired={isRequired}
+                          placeholder={placeholder}
+                          value={values[name]}
+                          onChange={() =>
+                            setHiddenFormSt((prev) => ({
+                              ...prev,
+                              [name]: values[name]
+                            }))
+                          }
+                          error={errors[name]}
+                          touched={touched[name]}
+                          mask={mask}
+                        />
+                      )
+                    )}
+                  </div>
+                  <ButtonPaw
+                    type="Primary_Blue"
+                    aType="submit"
+                    label="Send my Message"
+                    icon="icon-general_arrow"
+                  />
+                </Form>
               )}
             </Formik>
           </div>
@@ -185,4 +189,4 @@ function ContactUsPage() {
   );
 }
 
-export default ContactUsPage;
+export default ContactsPage;

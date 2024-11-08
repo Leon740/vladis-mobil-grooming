@@ -5,7 +5,7 @@ import { Wave } from 'components/general/Wave';
 import { PlaybarSection } from 'components/sections/PlaybarSection/PlaybarSection';
 import { ServicesSection } from 'components/sections/ServicesSection';
 
-function OurServicesPage() {
+function ServicesPage() {
   return (
     <Main>
       <PlaybarSection />
@@ -15,4 +15,4 @@ function OurServicesPage() {
     </Main>
   );
 }
-export default OurServicesPage;
+export default ServicesPage;
