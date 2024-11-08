@@ -65,6 +65,8 @@ function ContactUsPage() {
     }
   ];
 
+  const hiddenFormRf = useRef<HTMLFormElement>(null);
+
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
     try {
       const formData = new FormData();
@@ -90,12 +92,6 @@ function ContactUsPage() {
     }
   };
 
-  const hiddenFormRf = useRef<HTMLFormElement>(null);
-
-  const handleHiddenFormSubmitFn = () => {
-    hiddenFormRf.current?.submit();
-  };
-
   return (
     <Main>
       <PlaybarSection />
@@ -108,25 +104,6 @@ function ContactUsPage() {
               title={DATA.title.replace('Contact', `<span class="text-sky-500">Contact</span>`)}
               paragraph={DATA.paragraph}
             />
-
-            <form
-              name="app"
-              method="POST"
-              data-netlify="true"
-              ref={hiddenFormRf}
-              onSubmit={handleHiddenFormSubmitFn}
-            >
-              <input type="hidden" name="form-name" value="app" />
-
-              {formFields.map(({ name }) => (
-                <div key={name} className="flex flex-col">
-                  <label>{name}</label>
-                  <input name={name} />
-                </div>
-              ))}
-
-              <button type="submit">submit</button>
-            </form>
 
             <Formik
               initialValues={{
@@ -151,32 +128,45 @@ function ContactUsPage() {
               })}
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
-              {({ errors, touched }) => (
-                <Form className="section-inner-gap w-full xl:w-1/2">
-                  <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
-                    {formFields.map(
-                      ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
-                        <FormInput
-                          key={`input_${name}`}
-                          as={as}
-                          name={name}
-                          type={type}
-                          isRequired={isRequired}
-                          placeholder={placeholder}
-                          error={errors[name]}
-                          touched={touched[name]}
-                          mask={mask}
-                        />
-                      )
-                    )}
-                  </div>
-                  <ButtonPaw
-                    type="Primary_Blue"
-                    aType="submit"
-                    label="Send my Message"
-                    icon="icon-general_arrow"
-                  />
-                </Form>
+              {({ values, errors, touched }) => (
+                <div>
+                  <form name="app" method="POST" data-netlify="true" ref={hiddenFormRf}>
+                    <input type="hidden" name="form-name" value="app" />
+
+                    {formFields.map(({ name }) => (
+                      <div key={name} className="flex flex-col">
+                        <label>{name}</label>
+                        <input name={name} value={values[name]} readOnly />
+                      </div>
+                    ))}
+                  </form>
+
+                  <Form className="section-inner-gap w-full xl:w-1/2">
+                    <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
+                      {formFields.map(
+                        ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
+                          <FormInput
+                            key={`input_${name}`}
+                            as={as}
+                            name={name}
+                            type={type}
+                            isRequired={isRequired}
+                            placeholder={placeholder}
+                            error={errors[name]}
+                            touched={touched[name]}
+                            mask={mask}
+                          />
+                        )
+                      )}
+                    </div>
+                    <ButtonPaw
+                      type="Primary_Blue"
+                      aType="submit"
+                      label="Send my Message"
+                      icon="icon-general_arrow"
+                    />
+                  </Form>
+                </div>
               )}
             </Formik>
           </div>
