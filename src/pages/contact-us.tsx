@@ -150,14 +150,7 @@ function ContactUsPage() {
                     ))}
                   </form>
 
-                  <Form
-                    name="app"
-                    method="POST"
-                    data-netlify="true"
-                    className="section-inner-gap w-full xl:w-1/2"
-                  >
-                    <input type="hidden" name="form-name" value="app" />
-
+                  <Form className="section-inner-gap w-full xl:w-1/2">
                     <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                       {formFields.map(
                         ({ as, name, type, isRequired, placeholder, mask }: FormInputI) => (
