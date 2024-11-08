@@ -68,12 +68,14 @@ function ContactUsPage() {
   const hiddenFormRf = useRef<HTMLFormElement>(null);
 
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
+    hiddenFormRf.current?.submit();
+
     try {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      formData.append('form-name', 'contact');
+      formData.append('form-name', 'app');
 
       const response = await fetch('/', {
         method: 'POST',
