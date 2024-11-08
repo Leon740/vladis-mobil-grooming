@@ -124,6 +124,8 @@ function ContactUsPage() {
                   <input name={name} />
                 </div>
               ))}
+
+              <button type="submit">submit</button>
             </form>
 
             <Formik
