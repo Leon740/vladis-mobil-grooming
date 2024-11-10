@@ -17,7 +17,7 @@ function BookNowPage() {
   const DATA = {
     icon: 'icon-sections_beforethesession',
     title: 'Request an appointment',
-    paragraph: 'Have any questions or concerns? Feel free to [ask](/contact-us/).'
+    paragraph: 'Have any questions or concerns? Feel free to [ask](/contacts/).'
   };
 
   interface ValuesI {

@@ -35,7 +35,7 @@ export function BeforeTheSessionSection() {
       title: 'Before the <b>Session</b>',
       paragraph: {
         data: {
-          paragraph: 'Have any questions or concerns? Feel free to [ask](/contact-us/).'
+          paragraph: 'Have any questions or concerns? Feel free to [ask](/contacts/).'
         }
       }
     },

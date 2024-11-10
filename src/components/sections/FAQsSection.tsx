@@ -49,7 +49,7 @@ export function FAQsSection({ displayAllFaqs = false }: FAQsSectionPropsI) {
       paragraph: {
         data: {
           paragraph:
-            'We want to make sure all of your questions are answered. Not finding your answers here? Please [Contact Us](/contact-us/).'
+            'We want to make sure all of your questions are answered. Not finding your answers here? Please [Contact Us](/contacts/).'
         }
       }
     },
