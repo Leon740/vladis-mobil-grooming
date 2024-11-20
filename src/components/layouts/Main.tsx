@@ -62,11 +62,11 @@ export function Main({ children }: MainPropsI) {
     },
     links: [
       {
-        label: 'Home',
+        label: 'Homepage',
         url: '/'
       },
       {
-        label: 'Services',
+        label: 'Our Services',
         url: '/services/'
       },
       {
@@ -82,7 +82,7 @@ export function Main({ children }: MainPropsI) {
         url: '/faqs/'
       },
       {
-        label: 'Contacts',
+        label: 'Contact Us',
         url: '/contacts/'
       },
       {

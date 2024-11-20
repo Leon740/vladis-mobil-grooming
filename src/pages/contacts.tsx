@@ -113,7 +113,7 @@ function ContactsPage() {
               paragraph={DATA.paragraph}
             />
 
-            <form name="contact-test" method="POST" data-netlify="true" ref={hiddenFormRf}>
+            {/* <form name="contact-test" method="POST" data-netlify="true" ref={hiddenFormRf}>
               <input type="hidden" name="form-name" value="contact-test" />
 
               {formFields.map(({ name }) => (
@@ -122,7 +122,7 @@ function ContactsPage() {
                   <input name={name} value={hiddenFormSt[name]} readOnly />
                 </div>
               ))}
-            </form>
+            </form> */}
 
             <Formik
               initialValues={{
@@ -147,7 +147,7 @@ function ContactsPage() {
               })}
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
-              {({ values, errors, touched }) => (
+              {({ errors, touched }) => (
                 <Form className="section-inner-gap w-full xl:w-1/2">
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
@@ -159,13 +159,6 @@ function ContactsPage() {
                           type={type}
                           isRequired={isRequired}
                           placeholder={placeholder}
-                          value={values[name]}
-                          onChange={() =>
-                            setHiddenFormSt((prev) => ({
-                              ...prev,
-                              [name]: values[name]
-                            }))
-                          }
                           error={errors[name]}
                           touched={touched[name]}
                           mask={mask}

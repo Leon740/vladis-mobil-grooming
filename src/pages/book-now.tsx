@@ -12,6 +12,7 @@ import { Formik, Form, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
 import { navigate } from 'gatsby';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function BookNowPage() {
   const DATA = {

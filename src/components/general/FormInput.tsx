@@ -1,9 +1,8 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { Field, FieldProps } from 'formik';
 import InputMask from 'react-input-mask';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 interface FormInputPropsI {
   as: 'input' | 'textarea' | 'select' | 'mobile' | 'date' | undefined;
