@@ -1,8 +1,7 @@
 # Vladis Mobil Grooming
 
-Vladis Mobile Grooming Website<br/>
 [Visit Website](https://vladis.netlify.app/)<br/>
-Vladis Mobile Grooming provides Mobile Dog grooming<br/>
+Mobile Grooming services.
 
 ## Tech Stack
 
