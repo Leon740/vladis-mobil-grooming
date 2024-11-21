@@ -1,14 +1,22 @@
 # Vladis Mobil Grooming
 
-Grooming website
-[link](https://vladis.netlify.app/)
+Vladis Mobile Grooming Website<br/>
+[Visit Website](https://vladis.netlify.app/)<br/>
+Vladis Mobile Grooming provides Mobile Dog grooming<br/>
 
 ## Tech Stack
 
-- Gatsby
-- React
-- TypeScript
-- Tailwind
+**Language**:
+TypeScript
+
+**Framework**:
+Gatsby, React, React Formik & Yup
+
+**Styling**:
+Scss, TailwindCss
+
+**Data storage**:
+Strapi Headless Cms
 
 ## Pages
 
