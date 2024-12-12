@@ -65,23 +65,13 @@ function ContactsPage() {
     }
   ];
 
-  const [hiddenFormSt, setHiddenFormSt] = useState({
-    name: '',
-    mobile: '',
-    email: '',
-    message: ''
-  });
-  const hiddenFormRf = useRef<HTMLFormElement>(null);
-
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
-    hiddenFormRf.current?.submit();
-
     try {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      formData.append('form-name', 'app');
+      formData.append('form-name', 'contact');
 
       const response = await fetch('/', {
         method: 'POST',
@@ -96,6 +86,7 @@ function ContactsPage() {
         alert('Failed to send message.');
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Form submission error:', error);
     }
   };
