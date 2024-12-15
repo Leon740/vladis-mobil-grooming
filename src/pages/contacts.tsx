@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { Wave } from 'components/general/Wave';
@@ -81,12 +81,12 @@ function ContactsPage() {
       if (response.ok) {
         alert('Message sent!');
         actions.resetForm();
+        // navigate
         window.location.href = '/';
       } else {
         alert('Failed to send message.');
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error('Form submission error:', error);
     }
   };
@@ -104,16 +104,13 @@ function ContactsPage() {
               paragraph={DATA.paragraph}
             />
 
-            {/* <form name="contact-test" method="POST" data-netlify="true" ref={hiddenFormRf}>
-              <input type="hidden" name="form-name" value="contact-test" />
-
-              {formFields.map(({ name }) => (
-                <div key={name} className="flex flex-col">
-                  <label>{name}</label>
-                  <input name={name} value={hiddenFormSt[name]} readOnly />
-                </div>
-              ))}
-            </form> */}
+            <form hidden method="post" name="contact" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <input type="text" name="mobile" />
+              <textarea name="message" />
+            </form>
 
             <Formik
               initialValues={{

@@ -53,6 +53,7 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@types/react-input-mask": "^3.0.5",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
     "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
@@ -65,6 +66,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "prettier": "^2.8.7",
     "typescript": "^5.3.3",
+    "typescript-eslint": "^8.18.0",
     "webpack": "^5.92.1"
   }
 }

@@ -22,7 +22,7 @@
   "plugins": ["import", "react", "react-hooks", "prettier", "@typescript-eslint"],
   "rules": {
     "max-len": "off",
-    "no-console": "off",
+    "no-console": "warn",
     "no-alert": "off",
     "no-continue": "off",
     "no-plusplus": "off",
