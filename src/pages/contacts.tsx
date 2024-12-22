@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { Wave } from 'components/general/Wave';
@@ -105,6 +105,7 @@ function ContactsPage() {
             />
 
             <form name="contact" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
               <input type="text" name="mobile" />
