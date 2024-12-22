@@ -118,7 +118,7 @@ function BookNowPage() {
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      formData.append('form-name', 'appointment');
+      formData.append('form-name', 'appointment-test');
 
       const response = await fetch('/', {
         method: 'POST',
@@ -147,13 +147,13 @@ function BookNowPage() {
             <SectionHeader icon={DATA.icon} title={DATA.title} paragraph={DATA.paragraph} />
 
             <form
-              name="appointment"
+              name="appointment-test"
               data-netlify="true"
               netlify-honeypot="bot-field"
               hidden
               className="hidden"
             >
-              <input type="hidden" name="form-name" value="appointment" className="hidden" />
+              <input type="hidden" name="form-name" value="appointment-test" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
               <input type="text" name="mobile" />
@@ -204,12 +204,17 @@ function BookNowPage() {
             >
               {({ errors, touched }) => (
                 <Form
-                  name="appointment"
+                  name="appointment-test"
                   method="POST"
                   data-netlify="true"
                   className="section-inner-gap w-full xl:w-1/2"
                 >
-                  <input type="hidden" name="form-name" value="appointment" className="hidden" />
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="appointment-test"
+                    className="hidden"
+                  />
 
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
