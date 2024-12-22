@@ -77,6 +77,8 @@ function ContactsPage() {
         method: 'POST',
         body: formData
       });
+      console.log(formData);
+      console.log(response);
 
       if (response.ok) {
         alert('Message sent!');

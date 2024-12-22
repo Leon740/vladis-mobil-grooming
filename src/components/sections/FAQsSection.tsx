@@ -77,7 +77,7 @@ export function FAQsSection({ displayAllFaqs = false }: FAQsSectionPropsI) {
         paragraph: {
           data: {
             paragraph:
-              'We provide a full grooming experience, complete with bathing using the highest end care products, careful haircutting with scissors and clippers, nail trimming, ear cleaning and anal gland expression (upon request) and full teeth brushing. Specific services (eg, de-skunking) can be accommodated upon request. [See our services](/our-services/).'
+              'We provide a full grooming experience, complete with bathing using the highest end care products, careful haircutting with scissors and clippers, nail trimming, ear cleaning and anal gland expression (upon request) and full teeth brushing. Specific services (eg, de-skunking) can be accommodated upon request. [See our services](/services/).'
           }
         }
       },
