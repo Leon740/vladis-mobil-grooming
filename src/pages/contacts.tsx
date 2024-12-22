@@ -104,7 +104,12 @@ function ContactsPage() {
               paragraph={DATA.paragraph}
             />
 
-            <form name="contact-test" data-netlify="true" netlify-honeypot="bot-field">
+            <form
+              name="contact-test"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
               <input type="hidden" name="form-name" value="contact-test" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
