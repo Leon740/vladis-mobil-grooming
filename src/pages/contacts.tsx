@@ -65,13 +65,23 @@ function ContactsPage() {
     }
   ];
 
+  const [formDataSt, setFormDataSt] = useState<ValuesI>({
+    name: '',
+    email: '',
+    mobile: '',
+    message: ''
+  });
+
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
     try {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
+        // setFormDataSt((prev) => ({ ...prev, [key]: value }));
       });
-      formData.append('form-name', 'contact');
+      formData.append('form-name', 'contact-test');
+      // setFormDataSt((prev) => ({ ...prev, 'form-name': 'contact' }));
+      setFormDataSt(values);
 
       const response = await fetch('/', {
         method: 'POST',
@@ -79,6 +89,7 @@ function ContactsPage() {
       });
       console.log(formData);
       console.log(response);
+      console.log(formDataSt);
 
       if (response.ok) {
         alert('Message sent!');
@@ -113,10 +124,10 @@ function ContactsPage() {
               netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="contact-test" className="hidden" />
-              <input type="text" name="name" />
-              <input type="email" name="email" />
-              <input type="text" name="mobile" />
-              <textarea name="message" />
+              <input type="text" name="name" value={formDataSt.name} />
+              <input type="email" name="email" value={formDataSt.email} />
+              <input type="text" name="mobile" value={formDataSt.mobile} />
+              <textarea name="message" value={formDataSt.message} />
               <button type="submit">submit</button>
             </form>
 
