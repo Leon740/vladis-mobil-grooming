@@ -1,5 +1,4 @@
 import React from 'react';
-import { Fragment } from 'react';
 
 import { Main } from 'components/layouts/Main';
 import { Wave } from 'components/general/Wave';
@@ -17,7 +16,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 function BookNowPage() {
   const DATA = {
     icon: 'icon-sections_beforethesession',
-    title: 'Request an appointment',
+    title: 'Request an <b>appointment</b>',
     paragraph: 'Have any questions or concerns? Feel free to [ask](/contacts/).'
   };
 
@@ -114,22 +113,27 @@ function BookNowPage() {
   ];
 
   const handleSubmitFn = async (values: ValuesI, actions: FormikHelpers<ValuesI>) => {
-    const response = await fetch('https://formspree.io/f/mpwawkjk', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(values)
-    });
-    console.log(JSON.stringify(values));
+    try {
+      const formData = new FormData();
+      Object.entries(values).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      formData.append('form-name', 'appointment');
 
-    if (response.ok) {
-      alert('Message sent!');
-      actions.resetForm();
-      navigate('/');
-    } else {
-      alert('Failed to send message.');
-      actions.resetForm();
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('Message sent!');
+        actions.resetForm();
+        navigate('/');
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
     }
   };
 
@@ -140,14 +144,20 @@ function BookNowPage() {
       <Wave>
         <div className="container">
           <div className="section-inner-gap">
-            <SectionHeader
-              icon={DATA.icon}
-              title={DATA.title.replace(
-                'appointment',
-                `<span class="text-sky-500">appointment</span>`
-              )}
-              paragraph={DATA.paragraph}
-            />
+            <SectionHeader icon={DATA.icon} title={DATA.title} paragraph={DATA.paragraph} />
+
+            <form name="appointment" data-netlify="true" netlify-honeypot="bot-field" hidden>
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <input type="text" name="mobile" />
+              <textarea name="message" />
+              <input type="text" name="contact" />
+              <input type="text" name="street" />
+              <input type="text" name="city" />
+              <input type="text" name="state" />
+              <input type="text" name="zip" />
+              <input type="text" name="date" />
+            </form>
 
             <Formik
               initialValues={{
@@ -186,7 +196,14 @@ function BookNowPage() {
               onSubmit={(values: ValuesI, actions) => handleSubmitFn(values, actions)}
             >
               {({ errors, touched }) => (
-                <Form className="section-inner-gap w-full xl:w-1/2">
+                <Form
+                  name="appointment"
+                  method="POST"
+                  data-netlify="true"
+                  className="section-inner-gap w-full xl:w-1/2"
+                >
+                  <input type="hidden" name="form-name" value="appointment" className="hidden" />
+
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
                       ({
