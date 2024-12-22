@@ -146,7 +146,14 @@ function BookNowPage() {
           <div className="section-inner-gap">
             <SectionHeader icon={DATA.icon} title={DATA.title} paragraph={DATA.paragraph} />
 
-            <form name="appointment" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <form
+              name="appointment"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              hidden
+              className="hidden"
+            >
+              <input type="hidden" name="form-name" value="appointment" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
               <input type="text" name="mobile" />

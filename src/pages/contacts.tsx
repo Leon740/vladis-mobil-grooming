@@ -71,7 +71,7 @@ function ContactsPage() {
       Object.entries(values).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      formData.append('form-name', 'contact');
+      formData.append('form-name', 'contact-test');
 
       const response = await fetch('/', {
         method: 'POST',
@@ -99,8 +99,14 @@ function ContactsPage() {
           <div className="section-inner-gap">
             <SectionHeader icon={DATA.icon} title={DATA.title} paragraph={DATA.paragraph} />
 
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" className="hidden" />
+            <form
+              name="contact-test"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              className="hidden"
+            >
+              <input type="hidden" name="form-name" value="contact-test" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
               <input type="text" name="mobile" />
@@ -133,12 +139,12 @@ function ContactsPage() {
             >
               {({ errors, touched }) => (
                 <Form
-                  name="contact"
+                  name="contact-test"
                   method="POST"
                   data-netlify="true"
                   className="section-inner-gap w-full xl:w-1/2"
                 >
-                  <input type="hidden" name="form-name" value="contact" className="hidden" />
+                  <input type="hidden" name="form-name" value="contact-test" className="hidden" />
 
                   <div className="flex flex-col gap-32 bg-white py-64 px-32 rounded-16">
                     {formFields.map(
