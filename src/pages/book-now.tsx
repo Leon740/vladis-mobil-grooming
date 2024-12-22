@@ -146,13 +146,7 @@ function BookNowPage() {
           <div className="section-inner-gap">
             <SectionHeader icon={DATA.icon} title={DATA.title} paragraph={DATA.paragraph} />
 
-            <form
-              name="appointment-test"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              hidden
-              className="hidden"
-            >
+            <form name="appointment-test" method="POST" data-netlify="true" className="hidden">
               <input type="hidden" name="form-name" value="appointment-test" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
@@ -164,6 +158,7 @@ function BookNowPage() {
               <input type="text" name="state" />
               <input type="text" name="zip" />
               <input type="text" name="date" />
+              <button type="submit">submit</button>
             </form>
 
             <Formik

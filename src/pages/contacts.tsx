@@ -99,13 +99,7 @@ function ContactsPage() {
           <div className="section-inner-gap">
             <SectionHeader icon={DATA.icon} title={DATA.title} paragraph={DATA.paragraph} />
 
-            <form
-              name="contact-test"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              className="hidden"
-            >
+            <form name="contact-test" method="POST" data-netlify="true" className="hidden">
               <input type="hidden" name="form-name" value="contact-test" className="hidden" />
               <input type="text" name="name" />
               <input type="email" name="email" />
