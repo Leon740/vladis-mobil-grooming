@@ -104,11 +104,11 @@ function ContactsPage() {
               paragraph={DATA.paragraph}
             />
 
-            <form name="contact-test" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="contact-test" />
-              <input type="text" name="name" placeholder="Name" />
-              <input type="email" name="email" placeholder="Email" />
-              <button type="submit">Submit</button>
+            <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <input type="text" name="mobile" />
+              <textarea name="message" />
             </form>
 
             <Formik
