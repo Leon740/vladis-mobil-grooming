@@ -26,27 +26,17 @@ function FaqsItem({
   const toggleRef = useRef<HTMLDivElement>(null);
   const { width: windowWidth } = useWindowSize();
 
-  const onClick = () => {
-    handleClick();
-    handleToggle();
-  };
-
-  const handleToggle = () => {
-    console.log(isActive);
+  useEffect(() => {
     if (toggleRef.current) {
       toggleRef.current.style.maxHeight = isActive ? `${toggleRef.current.scrollHeight}px` : '0';
     }
-  };
-
-  useEffect(() => {
-    // handleToggle();
-  }, [windowWidth]);
+  }, [isActive, windowWidth]);
 
   return (
     <>
       <button
         type="button"
-        onClick={onClick}
+        onClick={handleClick}
         className={`p-32 w-full flex flex-row items-center justify-between hover:text-sky-500 ${
           isActive ? 'text-sky-500' : ''
         }`}
@@ -82,7 +72,6 @@ export function Faqs({ faqs }: IFaqsProps) {
               isActive={isActive}
               handleClick={() => {
                 setActiveId(isActive ? -1 : index);
-                console.log(activeId);
               }}
             />
           </li>
