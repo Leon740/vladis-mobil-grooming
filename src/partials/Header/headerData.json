@@ -1,0 +1,37 @@
+{
+  "logo": {
+    "src": "global/global_logo.svg",
+    "alt": "Vladis Mobil Grooming & Spa in PA, NJ, DE, NY"
+  },
+  "links": [
+    {
+      "label": "Homepage",
+      "href": "/"
+    },
+    {
+      "label": "Our Services",
+      "href": "/services/"
+    },
+    {
+      "label": "Before the Session",
+      "href": "/before-the-session/"
+    },
+    {
+      "label": "Reviews",
+      "href": "/reviews/"
+    },
+    {
+      "label": "FAQs",
+      "href": "/faqs/"
+    },
+    {
+      "label": "Contact Us",
+      "href": "/contacts/"
+    }
+  ],
+  "button": {
+    "icon": "global_calendar",
+    "label": "Book Now",
+    "href": "/appointment/"
+  }
+}

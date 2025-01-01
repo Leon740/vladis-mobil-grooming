@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  p a {
+    @apply text-sky-500 underline;
+  }
+
+  a,
+  button,
+  input {
+    @apply transition-all;
+  }
+
+  label {
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  /* section */
+  .section-gap-64 {
+    @apply flex flex-col gap-64;
+  }
+
+  /* text-cali */
+  .text-cali-48 {
+    @apply font-calistoga-regular text-48;
+  }
+
+  .text-cali-16 {
+    @apply font-calistoga-regular text-16;
+  }
+
+  /* text-ss3 */
+  .text-ss3-20-regular {
+    @apply text-20 font-ss3-regular;
+  }
+
+  .text-ss3-20-bold {
+    @apply text-20 font-ss3-bold;
+  }
+
+  .text-ss3-16-regular {
+    @apply text-16 font-ss3-regular;
+  }
+
+  .text-ss3-16-bold {
+    @apply text-16 font-ss3-bold;
+  }
+
+  /* flex */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}

@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '@layouts/Layout.astro';
+import { Wave } from '@components/global/Wave';
+import HeroSection from '@components/sections/0_index/1_hero/HeroSection.astro';
+import FeaturesSection from '@components/sections/0_index/2_features/FeaturesSection.astro';
+import ServicesSection from '@components/sections/1_services/ServicesSection.astro';
+import BeforeTheSessionSection from '@components/sections/2_before_the_session/BeforeTheSessionSection.astro';
+import ReviewsSection from '@components/sections/3_reviews/ReviewsSection.astro';
+import FaqsSection from '@components/sections/4_faqs/FaqsSection.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <HeroSection />
+
+  <Wave>
+    <FeaturesSection />
+  </Wave>
+
+  <ServicesSection displayAllServices={false} />
+
+  <Wave>
+    <BeforeTheSessionSection />
+  </Wave>
+
+  <ReviewsSection />
+
+  <Wave>
+    <FaqsSection />
+  </Wave>
 </Layout>

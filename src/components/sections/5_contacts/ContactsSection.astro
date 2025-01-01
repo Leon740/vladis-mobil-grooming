@@ -1,0 +1,21 @@
+---
+import DATA from './contactsData.json';
+import { Wave } from '@components/global/Wave';
+import SectionHeader from '@components/global/SectionHeader.astro';
+import { ContactsForm } from './ContactsForm';
+---
+
+<Wave>
+  <div class="container section-gap-64">
+    <SectionHeader data={DATA.header} />
+
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="mobile" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <ContactsForm client:only="preact" />
+  </div>
+</Wave>

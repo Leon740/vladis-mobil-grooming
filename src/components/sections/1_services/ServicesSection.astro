@@ -1,0 +1,64 @@
+---
+import DATA from './servicesData.json';
+import SectionHeader from '@components/global/SectionHeader.astro';
+import { Icon } from '@components/global/Icon';
+import { ServicesList } from './ServicesList';
+
+const { displayAllServices = true } = Astro.props;
+---
+
+<div class="container section-gap-64">
+  <SectionHeader data={DATA.header} />
+
+  <ul class="flex flex-col gap-32">
+    {
+      DATA.packages.map(({ name, title, paragraph }, packageIndex) => {
+        const packageIsEven = packageIndex % 2 === 0;
+
+        return (
+          <li
+            class={`flex flex-col gap-32 p-32 rounded-16 ${
+              packageIsEven ? 'bg-sky-500' : 'bg-white'
+            }`}
+          >
+            <span
+              class={`text-ss3-16-bold max-w-max py-4 px-16 rounded-16 ${packageIsEven ? 'bg-white text-sky-500' : 'bg-sky-500 text-white'}`}
+            >
+              {name}
+            </span>
+
+            <h3 class="font-calistoga-regular text-24">{title}</h3>
+            <p class="text-ss3-20-regular">{paragraph}</p>
+
+            <ul class="flex flex-col gap-32 xl:flex-row">
+              {DATA.services.map(({ icon, title, disabled }) => {
+                const isDisabled = disabled === packageIndex;
+
+                return (
+                  <li class="flex flex-row gap-16 items-center">
+                    <Icon
+                      icon={icon}
+                      className={`text-48 ${packageIsEven ? 'text-white' : 'text-sky-500'} ${isDisabled ? 'text-slate-400' : ''}`}
+                    />
+                    <span
+                      class={`text-ss3-20-regular ${isDisabled ? 'text-slate-400 line-through' : ''}`}
+                    >
+                      {title}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <ServicesList
+    button={DATA.button}
+    displayAllServices={displayAllServices}
+    services={DATA.services}
+    client:load
+  />
+</div>

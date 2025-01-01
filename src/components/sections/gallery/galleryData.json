@@ -1,0 +1,28 @@
+{
+  "images": [
+    {
+      "src": "gallery/gallery_1.jpg",
+      "alt": "Vladis Mobile Grooming & Spa"
+    },
+    {
+      "src": "gallery/gallery_2.jpg",
+      "alt": "Vladis Mobile Grooming & Spa"
+    },
+    {
+      "src": "gallery/gallery_3.jpg",
+      "alt": "Vladis Mobile Grooming & Spa"
+    },
+    {
+      "src": "gallery/gallery_4.jpg",
+      "alt": "Vladis Mobile Grooming & Spa"
+    },
+    {
+      "src": "gallery/gallery_5.jpg",
+      "alt": "Vladis Mobile Grooming & Spa"
+    },
+    {
+      "src": "gallery/gallery_6.jpg",
+      "alt": "Vladis Mobile Grooming & Spa"
+    }
+  ]
+}

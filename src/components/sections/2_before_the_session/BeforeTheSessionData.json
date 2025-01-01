@@ -1,0 +1,24 @@
+{
+  "header": {
+    "icon": "sections_before_the_session",
+    "title": "Before the <b>Session</b>",
+    "paragraph": "Have any questions or concerns? Feel free to [ask](/contacts/)."
+  },
+  "list": [
+    {
+      "icon": "before_the_session_parking",
+      "title": "Parking Matters",
+      "paragraph": "Our vans are 8 ft by 19.5 ft and love a flat space."
+    },
+    {
+      "icon": "before_the_session_communication",
+      "title": "Over Communication is Key",
+      "paragraph": "Share any special requirements, health, and behavioral details with your grooming professional."
+    },
+    {
+      "icon": "before_the_session_cancel",
+      "title": "Cancel with Care",
+      "paragraph": "Please provide a 24-hour notice if plans change."
+    }
+  ]
+}

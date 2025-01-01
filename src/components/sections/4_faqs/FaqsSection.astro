@@ -1,0 +1,19 @@
+---
+import DATA from './faqsData.json';
+import SectionHeader from '@components/global/SectionHeader.astro';
+import { Faqs } from './Faqs';
+import { Button } from '@components/global/Button';
+---
+
+<div class="container section-gap-64">
+  <SectionHeader data={DATA.header} />
+
+  <Faqs faqs={DATA.faqs} client:load />
+
+  <Button
+    href={DATA.button.href}
+    style="Secondary_White"
+    label={DATA.button.label}
+    icon={DATA.button.icon}
+  />
+</div>
