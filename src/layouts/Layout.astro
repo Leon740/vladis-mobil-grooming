@@ -1,0 +1,60 @@
+---
+import '@css/index.css';
+import Header from '@partials/Header/Header.astro';
+import Footer from '@partials/Footer/Footer.astro';
+
+interface Props {
+  title: string;
+  hasPagesNav?: boolean;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://rtdhvac.com" />
+
+    <!-- Seo -->
+    <title>{`Vladis ${title}`}</title>
+    <meta
+      name="keywords"
+      content="Dog grooming in Pennsylvania, Dog grooming in PA, Dog grooming in New Jersey, Dog grooming in NJ, Dog grooming in Delaware, Dog grooming in DE, Dog grooming in New York, Dog grooming in NY, Mobile dog grooming PA, Mobile dog grooming NJ, Mobile dog grooming DE, Mobile dog grooming NY, Professional dog grooming, Affordable dog grooming, Best dog groomer near me, Dog grooming services, Dog grooming packages, Pet grooming services, Dog spa services, Dog nail trimming, Dog bathing services, Dog fur trimming, Dog ear cleaning, Dog teeth cleaning, Dog grooming for small breeds, Dog grooming for large breeds, Poodle grooming services, Labrador grooming services, Shih Tzu grooming services, Golden Retriever grooming services, German Shepherd grooming services, Mobile dog grooming, Home dog grooming, Dog grooming for anxious dogs, Dog grooming for puppies, Senior dog grooming services, Organic dog grooming products, Eco-friendly dog grooming, Top-rated dog groomer, Experienced dog groomer, Local dog grooming, Dog grooming reviews, Dog grooming appointments, Dog grooming deals, Dog grooming promotions, Professional dog grooming in PA, Affordable dog grooming in NJ, Mobile dog grooming in DE, Best dog groomer in NY, Dog grooming services PA NJ DE NY, Dog spa services in Pennsylvania, Dog nail trimming in New Jersey, Pet grooming services in Delaware, Dog bathing in New York."
+    />
+    <meta
+      name="description"
+      content="Experience the best in mobile dog grooming. Our expert groomers bring stress-free, personalized care to your doorstep, ensuring your pup's happiness and well-being. Book your appointment today!"
+    />
+
+    <!-- Og -->
+    <meta property="og:title" content="Vladis Mobil Grooming & Spa" />
+    <meta
+      property="og:description"
+      content="Experience the best in mobile dog grooming. Our expert groomers bring stress-free, personalized care to your doorstep, ensuring your pup's happiness and well-being. Book your appointment today!"
+    />
+    <meta property="og:image" content="/images/global/global_opengraph.jpg" />
+    <meta property="og:url" content="https://vladismobilgrooming.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="RTD HVAC" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+  </head>
+  <body class="bg-gray-100 font-ss3-regular text-black">
+    <Header />
+
+    <slot />
+
+    <Footer />
+  </body>
+</html>

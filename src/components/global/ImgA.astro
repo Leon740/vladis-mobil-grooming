@@ -1,0 +1,19 @@
+---
+// eslint-disable-next-line import/no-unresolved
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+  width: number;
+  height: number;
+  isLazy?: boolean;
+}
+
+const { src, alt, className = '', width, height, isLazy = true } = Astro.props;
+
+const imgSrc = `/images/${src}`;
+---
+
+<Image src={imgSrc} alt={alt} class={className} width={width} height={height} loading={isLazy ? 'lazy' : 'eager'} />

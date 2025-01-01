@@ -1,0 +1,86 @@
+---
+import DATA from './headerData.json';
+import { Link } from '@components/global/Link';
+import { Icon } from '@components/global/Icon';
+import ImgA from '@components/global/ImgA.astro';
+import { AppointmentButton } from './AppointmentButton';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  id="headerContainer"
+  class="bg-white sticky top-0 z-header100 border-b-2 border-solid border-gray-100"
+>
+  <div class="container">
+    <div class="flex flex-row flex-wrap items-center justify-between">
+      <Link href="/">
+        <ImgA src={DATA.logo.src} alt={DATA.logo.alt} width={128} height={128} />
+      </Link>
+
+      <div class="xl:hidden">
+        <AppointmentButton
+          href={DATA.button.href}
+          label={DATA.button.label}
+          icon={DATA.button.icon}
+        />
+      </div>
+
+      <Link buttonType="button" className="xl:hidden hover:text-sky-500">
+        <span id="menuToggler" class="flex flex-col items-center">
+          <Icon icon="global_bars" className="text-32" />
+          <span class="text-16">Menu</span>
+        </span>
+      </Link>
+
+      <nav
+        id="menuContainer"
+        class="w-full xl:w-max max-h-0 xl:max-h-max overflow-hidden transition-all"
+      >
+        <ul class="py-16 xl:py-0 flex flex-col xl:flex-row xl:items-center gap-16 xl:gap-32">
+          {
+            DATA.links.map(({ href, label }) => (
+              <li>
+                <Link
+                  href={href}
+                  className={`text-ss3-20-regular hover:text-sky-500 ${currentPath === href ? 'text-sky-500' : ''}`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))
+          }
+          <li class="hidden xl:block">
+            <AppointmentButton
+              href={DATA.button.href}
+              label={DATA.button.label}
+              icon={DATA.button.icon}
+            />
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const headerContainer = document.getElementById('headerContainer') as HTMLDivElement;
+  const menuToggler = document.getElementById('menuToggler') as HTMLDivElement;
+  const menuContainer = document.getElementById('menuContainer') as HTMLDivElement;
+
+  menuToggler.addEventListener('click', () => {
+    menuContainer.classList.toggle('max-h-0');
+    menuContainer.classList.toggle('max-h-[300px]');
+    menuToggler.classList.toggle('text-sky-500');
+  });
+
+  function handleClickOutsideHeader(event: MouseEvent) {
+    if (!headerContainer.contains(event.target as Node)) {
+      menuContainer.classList.remove('max-h-[300px]');
+      menuContainer.classList.add('max-h-0');
+      menuToggler.classList.remove('text-sky-500');
+    }
+  }
+
+  document.addEventListener('click', handleClickOutsideHeader);
+</script>

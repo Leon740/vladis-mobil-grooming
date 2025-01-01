@@ -1,0 +1,29 @@
+---
+import DATA from './heroData.json';
+import SectionHeader from '@components/global/SectionHeader.astro';
+import { ButtonPaw } from '@components/global/Button';
+import ImgA from '@components/global/ImgA.astro';
+---
+
+<div class="container pt-64 xl:pt-128">
+  <div class="section-gap-64 xl:flex-row xl:items-center xl:justify-between">
+    <div class="flex flex-col gap-32">
+      <SectionHeader as="h1" data={DATA.header} />
+      <ButtonPaw
+        href={DATA.button.href}
+        style="Primary_Blue"
+        label={DATA.button.label}
+        icon={DATA.button.icon}
+        iconClassName="-order-1"
+      />
+    </div>
+
+    <ImgA
+      src={DATA.img.src}
+      alt={DATA.img.alt}
+      width={512}
+      height={245}
+      className="w-512 self-center"
+    />
+  </div>
+</div>

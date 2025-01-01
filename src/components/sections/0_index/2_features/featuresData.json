@@ -1,0 +1,23 @@
+{
+  "header": {
+    "icon": "sections_features",
+    "title": "Unleashing a <b>new era of dog grooming</b>"
+  },
+  "list": [
+    {
+      "icon": "features_stress",
+      "title": "Stress-Free",
+      "paragraph": "Our calm, private grooming space is tailored for your dog’s undivided attention. Ideal for anxious pups."
+    },
+    {
+      "icon": "features_quality",
+      "title": "High Quality",
+      "paragraph": "Top-tier shampoos, vet-rated cleaning solutions, breed-specific brushes, and unmatched expertise."
+    },
+    {
+      "icon": "features_convenient",
+      "title": "Convenient",
+      "paragraph": "Forget the 4-hour trips to the groomer. We're at your doorstep on your schedule."
+    }
+  ]
+}

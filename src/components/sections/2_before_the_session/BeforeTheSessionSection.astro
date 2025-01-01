@@ -1,0 +1,10 @@
+---
+import DATA from './BeforeTheSessionData.json';
+import SectionHeader from '@components/global/SectionHeader.astro';
+import { List } from '@components/global/List';
+---
+
+<div class="container section-gap-64">
+  <SectionHeader data={DATA.header} />
+  <List name="BeforeTheSession" list={DATA.list} />
+</div>

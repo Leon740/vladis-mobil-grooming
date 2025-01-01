@@ -1,0 +1,32 @@
+---
+import { Icon } from '@components/global/Icon';
+import { marked } from 'marked';
+
+interface Props {
+  as?: 'h1' | 'h2';
+  data: {
+    icon: string;
+    title: string;
+    paragraph?: string;
+  };
+  className?: string;
+}
+
+const {
+  as = 'h2',
+  data: { icon, title, paragraph },
+  className = ''
+} = Astro.props;
+
+const Tag = as;
+---
+
+<div class={`section-gap-64 ${className}`}>
+  <Icon icon={icon} className="text-128 text-sky-500" />
+  <section class="flex flex-col gap-16">
+    {/* eslint-disable-next-line jsx-a11y/heading-has-content, astro/no-set-html-directive*/}
+    <Tag class="text-cali-48" set:html={title.replaceAll('<b>', '<b class="text-sky-500">')} />
+    {/* eslint-disable-next-line astro/no-set-html-directive */}
+    {paragraph && <div class="text-ss3-20-regular leading-loose" set:html={marked(paragraph)} />}
+  </section>
+</div>

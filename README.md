@@ -1,37 +1,38 @@
 # Vladis Mobil Grooming
 
-[Visit Website](https://vladis.netlify.app/)<br/>
+[Visit Website](https://vladis.netlify.app/)  
 Mobile Grooming services.
 
 ## Tech Stack
 
 **Language**:
-TypeScript
+TypeScript, Native JavaScript
 
 **Framework**:
-Gatsby, React, React Formik & Yup
+Astro, Preact, React Formik & Yup
 
 **Styling**:
 Scss, TailwindCss
 
 **Data storage**:
-Strapi Headless Cms
+Markdown
 
 ## Pages
 
 - /index
 - /services
-- /before-the-session
 - /reviews
+- /before-the-session
 - /faqs
 - /contacts
-- /book-now
+- /appointment
+- /404
 
-![index](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/0_index.jpg?raw=true 'index')
-![services](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/1_services.jpg?raw=true 'services')
-![before-the-session](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/2_before-the-session.jpg?raw=true 'before-the-session')
-![reviews](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/3_reviews.jpg?raw=true 'reviews')
-![faqs](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/4_faqs.jpg?raw=true 'faqs')
-![contacts](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/5_contacts.jpg?raw=true 'contacts')
-![book-now](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/6_book-now.jpg?raw=true 'book-now')
-![404](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/src/assets/images/pages/7_404.jpg?raw=true '404')
+![index](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_0_index.jpg?raw=true 'index')
+![services](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_1_services.jpg?raw=true 'services')
+![before-the-session](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_2_before-the-session.jpg?raw=true 'before-the-session')
+![reviews](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_3_reviews.jpg?raw=true 'reviews')
+![faqs](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_4_faqs.jpg?raw=true 'faqs')
+![contacts](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_5_contacts.jpg?raw=true 'contacts')
+![appointment](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_6_appointment.jpg?raw=true 'appointment')
+![404](https://raw.githubusercontent.com/Leon740/vladis-mobil-grooming-frontend/main/public/pages/pages_0_404.jpg?raw=true '404')

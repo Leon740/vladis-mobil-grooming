@@ -1,0 +1,12 @@
+---
+import DATA from './notFoundData.json';
+import SectionHeader from '@components/global/SectionHeader.astro';
+---
+
+<SectionHeader data={DATA.header} className="container items-center text-center" />
+
+<script>
+  setTimeout(() => {
+    window.location.href = '/';
+  }, 2000);
+</script>

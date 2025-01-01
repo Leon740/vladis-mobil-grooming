@@ -1,0 +1,15 @@
+{
+  "header": {
+    "title": "Doorstep Dog Grooming",
+    "paragraph": "Serving PA, NJ, NY, DE"
+  },
+  "button": {
+    "label": "267-977-1310",
+    "href": "tel:2679771310",
+    "icon": "contacts_phone"
+  },
+  "img": {
+    "src": "0_index/1_hero/hero_img.png",
+    "alt": "Vladis Mobile Grooming & Spa in PA, NJ, DE, NY"
+  }
+}
