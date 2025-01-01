@@ -5,7 +5,7 @@ export default {
     extend: {
       container: {
         center: true,
-        padding: '16px'
+        padding: '32px'
       },
       fontFamily: {
         'calistoga-regular': 'Calistoga_Regular',
@@ -16,6 +16,7 @@ export default {
       fontSize: {
         16: '16px',
         20: '20px',
+        24: '24px',
         32: '32px',
         48: '48px',
         64: '64px',

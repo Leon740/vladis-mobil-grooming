@@ -4,7 +4,11 @@ import SectionHeader from '@components/global/SectionHeader.astro';
 import { Icon } from '@components/global/Icon';
 import { ServicesList } from './ServicesList';
 
-const { displayAllServices = true } = Astro.props;
+interface Props {
+  displayAllServices?: boolean;
+}
+
+const { displayAllServices = true } = Astro.props as Props;
 ---
 
 <div class="container section-gap-64">

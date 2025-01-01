@@ -32,13 +32,14 @@ function FaqsItem({
   };
 
   const handleToggle = () => {
+    console.log(isActive);
     if (toggleRef.current) {
       toggleRef.current.style.maxHeight = isActive ? `${toggleRef.current.scrollHeight}px` : '0';
     }
   };
 
   useEffect(() => {
-    handleToggle();
+    // handleToggle();
   }, [windowWidth]);
 
   return (
@@ -58,7 +59,7 @@ function FaqsItem({
       </button>
       <div ref={toggleRef} className="overflow-hidden transition-all max-h-0">
         <div
-          className="px-32 pb-32 text-ss3-20-regular"
+          className="px-32 pb-32 text-ss3-20-regular leading-loose"
           dangerouslySetInnerHTML={{ __html: marked(paragraph) }}
         />
       </div>
@@ -81,6 +82,7 @@ export function Faqs({ faqs }: IFaqsProps) {
               isActive={isActive}
               handleClick={() => {
                 setActiveId(isActive ? -1 : index);
+                console.log(activeId);
               }}
             />
           </li>
