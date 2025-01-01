@@ -41,13 +41,13 @@ function FaqsItem({
           isActive ? 'text-sky-500' : ''
         }`}
       >
-        <span className="text-ss3-20-bold text-left transition-all">{title}</span>
+        <span className="transition-all text-ss3-20-bold text-left">{title}</span>
         <Icon
           icon="global_arrow"
-          className={`text-20 transition-all ${isActive ? '-rotate-90' : 'rotate-90'}`}
+          className={`transition-all text-20 ${isActive ? '-rotate-90' : 'rotate-90'}`}
         />
       </button>
-      <div ref={toggleRef} className="overflow-hidden transition-all max-h-0">
+      <div ref={toggleRef} className="transition-all overflow-hidden max-h-0">
         <div
           className="px-32 pb-32 text-ss3-20-regular leading-loose"
           dangerouslySetInnerHTML={{ __html: marked(paragraph) }}

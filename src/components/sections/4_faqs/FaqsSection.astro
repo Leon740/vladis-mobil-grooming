@@ -3,6 +3,7 @@ import DATA from './faqsData.json';
 import SectionHeader from '@components/global/SectionHeader.astro';
 import { Faqs } from './Faqs';
 import { Button } from '@components/global/Button';
+import { ButtonPaw } from '@components/global/Button';
 ---
 
 <div class="container section-gap-64">
@@ -11,6 +12,7 @@ import { Button } from '@components/global/Button';
   <Faqs faqs={DATA.faqs} client:load />
 
   <Button
+  <ButtonPaw
     href={DATA.button.href}
     style="Secondary_White"
     label={DATA.button.label}
