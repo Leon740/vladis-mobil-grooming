@@ -1,6 +1,7 @@
 import { type ReactNode } from 'preact/compat';
 
 export interface ILinkProps {
+  id?: string;
   buttonType?: 'button' | 'submit';
   href?: string;
   handleClick?: () => void;
@@ -10,6 +11,7 @@ export interface ILinkProps {
 }
 
 export function Link({
+  id = '',
   buttonType,
   href,
   handleClick = () => {},
@@ -29,7 +31,7 @@ export function Link({
     )
   ) : (
     // eslint-disable-next-line react/button-has-type
-    <button type={buttonType || 'button'} onClick={handleClick} className={className}>
+    <button id={id} type={buttonType || 'button'} onClick={handleClick} className={className}>
       {children}
     </button>
   );

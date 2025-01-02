@@ -2,7 +2,8 @@
 import DATA from './servicesData.json';
 import SectionHeader from '@components/global/SectionHeader.astro';
 import { Icon } from '@components/global/Icon';
-import { ServicesList } from './ServicesList';
+import List from '@components/global/List.astro';
+import { ButtonPaw } from '@components/global/Button';
 
 interface Props {
   displayAllServices?: boolean;
@@ -59,10 +60,28 @@ const { displayAllServices = true } = Astro.props as Props;
     }
   </ul>
 
-  <ServicesList
-    button={DATA.button}
-    displayAllServices={displayAllServices}
-    services={DATA.services}
-    client:load
+  <div class={`${displayAllServices ? '' : 'hidden'}`} id="listContainer">
+    <section class="section-gap-64">
+      <h2 class="text-cali-48 mt-64">
+        Learn more about our <span class="text-sky-500">Services</span>
+      </h2>
+      <List list={DATA.services} />
+    </section>
+  </div>
+
+  <ButtonPaw
+    id="listToggler"
+    buttonType="button"
+    style="Secondary_White"
+    label={DATA.button.label}
+    icon={DATA.button.icon}
   />
 </div>
+
+<script>
+  const listToggler = document.getElementById('listToggler');
+  const listContainer = document.getElementById('listContainer');
+  listToggler!.addEventListener('click', () => {
+    listContainer!.classList.remove('hidden');
+  });
+</script>

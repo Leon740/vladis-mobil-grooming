@@ -58,7 +58,7 @@ function FaqsItem({
 }
 
 export function Faqs({ faqs }: IFaqsProps) {
-  const [activeId, setActiveId] = useState<number | null>(0);
+  const [activeId, setActiveId] = useState<number>(0);
 
   return (
     <ul className="flex flex-col gap-32">

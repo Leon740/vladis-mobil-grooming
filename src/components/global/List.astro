@@ -1,0 +1,29 @@
+---
+import { Icon } from './Icon';
+
+interface IListItem {
+  icon: string;
+  title: string;
+  paragraph: string;
+}
+
+interface Props {
+  list: IListItem[];
+}
+
+const { list } = Astro.props as Props;
+---
+
+<ul class="flex flex-col gap-32">
+  {
+    list.map(({ icon, title, paragraph }: IListItem) => {
+      return (
+        <li class="flex flex-col gap-16 p-32 rounded-16 bg-white">
+          <Icon icon={icon} className="text-64 text-sky-500" />
+          <h3 class="text-ss3-20-bold">{title}</h3>
+          <p class="text-ss3-20-regular">{paragraph}</p>
+        </li>
+      );
+    })
+  }
+</ul>

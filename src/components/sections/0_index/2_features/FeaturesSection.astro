@@ -1,10 +1,10 @@
 ---
 import DATA from './featuresData.json';
 import SectionHeader from '@components/global/SectionHeader.astro';
-import { List } from '@components/global/List';
+import List from '@components/global/List.astro';
 ---
 
 <div class="container section-gap-64">
   <SectionHeader data={DATA.header} />
-  <List name="Features" list={DATA.list} />
+  <List list={DATA.list} />
 </div>

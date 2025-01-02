@@ -12,6 +12,7 @@ interface IButtonProps extends TButtonProps {
 }
 
 export function Button({
+  id,
   buttonType,
   href,
   handleClick = () => {},
@@ -38,6 +39,7 @@ export function Button({
 
   return (
     <Link
+      id={id}
       buttonType={buttonType}
       href={href}
       handleClick={handleClick}
