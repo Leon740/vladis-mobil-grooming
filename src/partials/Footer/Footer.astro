@@ -1,31 +1,18 @@
 ---
 import DATA from './footerData.json';
-import { Link } from '@components/global/Link';
-import ImgA from '@components/global/ImgA.astro';
+import { Img } from '@components/global/Img';
+import { SocialNav } from '@partials/SocialNav/SocialNav';
 
 const date = new Date();
 ---
 
 <footer class="pt-64 xl:pt-128">
-  <ImgA src={DATA.img.src} alt={DATA.img.alt} className="w-max mx-auto" width={1000} height={384} />
+  <Img src={DATA.img.src} alt={DATA.img.alt} className="w-max mx-auto" width={1000} height={384} />
 
   <div class="bg-white py-32">
-    <ul class="container flex flex-col gap-32 lg:flex-row">
-      {
-        DATA.socialLinks.map(({ label, href, img }) => (
-          <li class="w-full lg:w-1/4">
-            <Link
-              href={href}
-              isExternal
-              className="flex flex-row items-center gap-8 hover:text-sky-500"
-            >
-              <ImgA src={img} alt="Vladis Mobile Grooming Social Contacts" width={24} height={24} />
-              <span class="text-ss3-16-regular">{label}</span>
-            </Link>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="container">
+      <SocialNav />
+    </div>
   </div>
 
   <div class="py-16 container">

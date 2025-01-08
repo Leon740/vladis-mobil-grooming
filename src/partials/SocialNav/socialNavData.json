@@ -1,0 +1,36 @@
+{
+  "links": [
+    {
+      "label": "(267)-977-1310",
+      "href": "tel:2679771310",
+      "img": {
+        "src": "social/social_1_mobile.svg",
+        "alt": "Vladis Mobile Grooming Mobile"
+      }
+    },
+    {
+      "label": "vladismobilegrooming@gmail.com",
+      "href": "mailto:vladismobilegrooming@gmail.com",
+      "img": {
+        "src": "social/social_2_email.svg",
+        "alt": "Vladis Mobile Grooming Email"
+      }
+    },
+    {
+      "label": "vladis.mobile.grooming.spa",
+      "href": "https://instagram.com/",
+      "img": {
+        "src": "social/social_3_instagram.svg",
+        "alt": "Vladis Mobile Grooming Instagram"
+      }
+    },
+    {
+      "label": "vladis.mobile.grooming.spa",
+      "href": "https://www.facebook.com/people/Vladis-Mobile-Grooming-Spa/61564306883683/",
+      "img": {
+        "src": "social/social_4_facebook.svg",
+        "alt": "Vladis Mobile Grooming Facebook"
+      }
+    }
+  ]
+}

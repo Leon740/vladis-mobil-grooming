@@ -52,7 +52,8 @@ export default {
       zIndex: {
         0: 0,
         10: 10,
-        header100: 100
+        menu100: 100,
+        header1000: 1000
       }
     }
   },
