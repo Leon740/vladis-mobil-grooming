@@ -51,8 +51,9 @@ export function HeaderInner({ currentPath }: IHeaderInnerProps) {
 
           <Link
             buttonType="button"
-            className={`lg:hidden hover:text-sky-500 ${isOpenedSt ? 'text-sky-500' : ''}`}
+            className={`xl:hidden hover:text-sky-500 ${isOpenedSt ? 'text-sky-500' : ''}`}
             handleClick={handleButtonClick}
+            aria-label="Toggle Menu"
           >
             <span className="flex flex-col items-center">
               <Icon icon={isOpenedSt ? 'global_close' : 'global_bars'} className="text-32" />
