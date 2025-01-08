@@ -66,7 +66,7 @@ export function Faqs({ faqs }: IFaqsProps) {
         const isActive = activeId === index;
 
         return (
-          <li key={`FaqsItem_${index}`} className="bg-white rounded-16">
+          <li key={faq.title} className="bg-white rounded-16">
             <FaqsItem
               faq={faq}
               isActive={isActive}

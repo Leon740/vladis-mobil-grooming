@@ -48,7 +48,7 @@ export function FormInput({
           className={className}
         >
           {options!.map((option) => (
-            <option key={`option_${option}`} value={option}>
+            <option key={option} value={option}>
               {option}
             </option>
           ))}

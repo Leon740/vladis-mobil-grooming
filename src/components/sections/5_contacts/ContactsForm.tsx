@@ -112,7 +112,7 @@ export function ContactsForm() {
           <div className="flex flex-col gap-32 py-64 px-32 rounded-16 bg-white">
             {INPUTS.map(({ as, name, type, isRequired, placeholder, mask }: IInput) => (
               <FormInput
-                key={`ContactsForm_FormInput_${name}`}
+                key={name}
                 as={as}
                 name={name}
                 type={type}
