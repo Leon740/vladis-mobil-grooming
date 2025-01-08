@@ -23,7 +23,7 @@ export function Button({
   icon,
   iconClassName = ''
 }: IButtonProps) {
-  let classNameVar = `text-ss3-20-bold py-16 px-32 rounded-32 border-2 border-solid border-sky-500 flex flex-row items-center gap-16 w-max transition hover:text-white ${className} `;
+  let classNameVar = `text-ss3-20-bold py-16 px-32 rounded-32 border-2 border-solid border-sky-500 flex flex-row items-center gap-8 w-max transition hover:text-white ${className} `;
 
   switch (style) {
     case 'Secondary_White':
