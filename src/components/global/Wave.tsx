@@ -1,5 +1,5 @@
 import { type ReactNode } from 'preact/compat';
-import { ImgT } from './ImgT';
+import { Img } from './Img';
 
 interface IWaveInnerProps {
   type: 'top' | 'bottom';
@@ -8,7 +8,7 @@ interface IWaveInnerProps {
 function WaveInner({ type }: IWaveInnerProps) {
   return (
     <div className={`pt-64 xl:pt-128 ${type === 'top' ? '' : 'bg-[#FFF8F3]'}`}>
-      <ImgT
+      <Img
         src={`global/global_wave_${type}.png`}
         alt="Vladis Mobil Grooming"
         width={1920}

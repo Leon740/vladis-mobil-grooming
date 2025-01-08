@@ -1,5 +1,5 @@
 import { Icon } from './Icon';
-import { ImgT } from './ImgT';
+import { Img } from './Img';
 import { Link, type ILinkProps } from './Link';
 
 type TButtonProps = Omit<ILinkProps, 'children'>;
@@ -55,7 +55,7 @@ export function Button({
 export function ButtonPaw(props: IButtonProps) {
   return (
     <div className="flex flex-row mt-64 pl-64 relative">
-      <ImgT
+      <Img
         src="global/global_paw.svg"
         alt="Vladis Mobil Grooming"
         width={128}

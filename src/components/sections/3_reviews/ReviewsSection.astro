@@ -1,7 +1,7 @@
 ---
 import DATA from './reviewsData.json';
 import SectionHeader from '@components/global/SectionHeader.astro';
-import ImgA from '@components/global/ImgA.astro';
+import { Img } from '@components/global/Img';
 import { Icon } from '@components/global/Icon';
 ---
 
@@ -12,15 +12,15 @@ import { Icon } from '@components/global/Icon';
     <div class="px-32 w-max lg:container">
       <ul class="flex flex-row gap-32 lg:block lg:columns-3">
         {
-          DATA.reviews.map(({ yelp, title, paragraph, author, imgUrl, imgAlt }) => (
+          DATA.reviews.map(({ yelp, title, paragraph, author, img: { src, alt } }) => (
             <li class="bg-white rounded-16 overflow-hidden flex flex-col flex-shrink-0 w-[384px] lg:w-auto lg:mt-32 lg:first-of-type:mt-0">
-              <ImgA src={imgUrl} alt={imgAlt} width={384} height={250} className="w-full" />
+              <Img src={src} alt={alt} width={384} height={250} className="w-full" />
               <div class="flex flex-col justify-between gap-16 p-32 h-full">
                 <section aria-label={title} class="flex flex-col gap-16">
                   <div class="flex flex-row gap-16 items-center">
-                    <ImgA
-                      src={yelp ? DATA.yelpImg : DATA.googleImg}
-                      alt="Vladis Mobile Grooming & Spa 5 Stars Rating"
+                    <Img
+                      src={yelp ? DATA.img.yelpSrc : DATA.img.googleSrc}
+                      alt={DATA.img.alt}
                       width={32}
                       height={32}
                     />

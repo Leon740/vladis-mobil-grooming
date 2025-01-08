@@ -1,6 +1,6 @@
 ---
-import ImgA from '@components/global/ImgA.astro';
 import DATA from './galleryData.json';
+import { Img } from '@components/global/Img';
 ---
 
 <div class="container max-w-full">
@@ -8,7 +8,7 @@ import DATA from './galleryData.json';
     {
       DATA.images.map(({ src, alt }) => (
         <li class="p-8 w-1/3 xl:w-1/6">
-          <ImgA
+          <Img
             src={src}
             alt={alt}
             width={256}

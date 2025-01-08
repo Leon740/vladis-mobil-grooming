@@ -7,7 +7,7 @@ interface IImgProps {
   className?: string;
 }
 
-export function ImgT({ src, alt, width, height, isLazy = true, className = '' }: IImgProps) {
+export function Img({ src, alt, width, height, isLazy = true, className = '' }: IImgProps) {
   const imgSrc = `/images/${src}`;
 
   return (

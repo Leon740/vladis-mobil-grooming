@@ -2,7 +2,7 @@
 import DATA from './heroData.json';
 import SectionHeader from '@components/global/SectionHeader.astro';
 import { ButtonPaw } from '@components/global/Button';
-import ImgA from '@components/global/ImgA.astro';
+import { Img } from '@components/global/Img';
 ---
 
 <div class="container pt-64 xl:pt-128">
@@ -18,7 +18,7 @@ import ImgA from '@components/global/ImgA.astro';
       />
     </div>
 
-    <ImgA
+    <Img
       src={DATA.img.src}
       alt={DATA.img.alt}
       width={512}
